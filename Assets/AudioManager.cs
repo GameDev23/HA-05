@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource SourceSFX;
     public AudioMixer mixer;
     
+    public AudioClip CorneriaTheme;
+    
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
 
@@ -27,6 +29,11 @@ public class AudioManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+
+        SourceBGM.clip = CorneriaTheme;
+        SourceBGM.Play();
+        SourceBGM.volume = 0.5f;
+
     }
 
     // Update is called once per frame
