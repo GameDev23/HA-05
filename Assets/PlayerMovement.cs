@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,40 +7,56 @@ public class PlayerMovement : MonoBehaviour
 {
     private float xMov;
     private float yMov;
+
     [SerializeField] private Camera camera;
-    public float Speed = 10;
+    [SerializeField] float Speed = 10;
+    [SerializeField] private GameObject DestroyAnimation;
+    private Rigidbody2D rg;
+    
     
     
     // Start is called before the first frame update
     void Start()
     {
+        rg = gameObject.GetComponent<Rigidbody2D>();
         
+    }
+
+    private void FixedUpdate()
+    {
+        rg.velocity = rg.velocity * (float) (0.9);
+        
+        xMov = Input.GetAxis("Horizontal");
+        yMov = Input.GetAxis("Vertical");
+        Vector3 mov = new Vector3(xMov, yMov, 0);
+
+        if (mov != Vector3.zero)
+        {
+            rg.AddForce(new Vector2(xMov * Speed, yMov * Speed));
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        xMov = Input.GetAxis("Horizontal");
-        yMov = Input.GetAxis("Vertical");
 
-        Vector3 mov = ((Vector3.up * yMov) + (Vector3.right * xMov)) * (Speed * Time.deltaTime);
-        if (mov != Vector3.zero)
+
+        
+    }
+    
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Collision on Player");
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            var bottomLeft = camera.ViewportToWorldPoint(new Vector3(0, 0, camera.nearClipPlane));
-            var topRight = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
- 
-            var cameraRect = new Rect(
-                bottomLeft.x,
-                bottomLeft.y,
-                topRight.x - bottomLeft.x,
-                topRight.y - bottomLeft.y);
-            transform.position += mov;
-            
-            transform.position = new Vector3(
-                Mathf.Clamp(transform.position.x, cameraRect.xMin + 0.5f, cameraRect.xMax - 0.5f),
-                Mathf.Clamp(transform.position.y, cameraRect.yMin + 0.5f, cameraRect.yMax - 0.5f),
-                transform.position.z);
+            GameObject destroyAnimation = Instantiate(DestroyAnimation);
+            destroyAnimation.transform.position = transform.position;
+            Destroy(gameObject);
         }
+    }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger on Player");
     }
 }
