@@ -5,6 +5,7 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public static Manager Instance;
+    public int PlayerScore = 0;
     
     //DECLARE GLOBAL SCENE VARIABLES HERE
     #region VARIABLE DECLARATION
