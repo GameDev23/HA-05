@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mixer;
     
     public AudioClip CorneriaTheme;
+    public AudioClip BossBeam;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION

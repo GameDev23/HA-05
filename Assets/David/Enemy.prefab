@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 2697474127469836294}
   - component: {fileID: 2697474127469836295}
   - component: {fileID: 2697474127469836312}
-  m_Layer: 0
+  - component: {fileID: 8723658253761061758}
+  - component: {fileID: 4479014918926838425}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -125,5 +127,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1
-  projectile: {fileID: 0}
+  projectile: {fileID: 2205609354309998046, guid: 0767e62992a920f41951c203724c419e, type: 3}
   DestroyAnimation: {fileID: 6469208720404049894, guid: 03edc74619dd6e54e8ebce847ae66a44, type: 3}
+  DestroyAnimationScaling: 1
+  nextProjectileDelay: 2
+  minDelay: 0.5
+  maxDelay: 3
+--- !u!114 &8723658253761061758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697474127469836291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdcbcf166814154ca03795375b3a7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vertical: 1
+  Horizontal: 1
+  Sinus: 0
+  Cosinus: 0
+  SpeedVertical: 10
+  SpeedHorizontal: 100
+  SpeedSinus: 0
+  SpeedCosinus: 0
+  timeVertical: 5
+  timeHorizontal: 20
+  timeSinus: 0
+  timeCosinus: 0
+--- !u!50 &4479014918926838425
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697474127469836291}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

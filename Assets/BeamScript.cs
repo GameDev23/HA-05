@@ -6,7 +6,8 @@ using UnityEngine.Serialization;
 
 public class BeamScript : MonoBehaviour
 {
-    [SerializeField] private float Speed = 10;
+    [SerializeField] private float xSpeed = 10;
+    [SerializeField] private float ySpeed = 0;
     [SerializeField] AudioClip ShootSound;
     [SerializeField] AudioClip HitSound;
     
@@ -18,7 +19,7 @@ public class BeamScript : MonoBehaviour
     void Start()
     {
         rg = gameObject.GetComponent<Rigidbody2D>();
-        rg.velocity = new Vector2(10, 0);
+        rg.velocity = new Vector2(xSpeed, ySpeed);
         AudioManager.Instance.SourceSFX.PlayOneShot(ShootSound, 1f);
     }
 
@@ -32,14 +33,23 @@ public class BeamScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("GameBorder"))
         {
-            Debug.Log("Destroy Beam");
             Destroy(gameObject);
         }else if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit Enemy");
             AudioManager.Instance.SourceSFX.PlayOneShot(HitSound, 0.6f);
             Destroy(gameObject);
+        }else if (other.gameObject.CompareTag("EnemyProjectile") && gameObject.CompareTag("PlayerProjectile"))
+        {
+            //different projectiles collided
+            Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("PlayerProjectile") && gameObject.CompareTag("EnemyProjectile"))
+        {
+            //different projectiles collided
+            Destroy(gameObject);
+        }
+        
 
     }
 }

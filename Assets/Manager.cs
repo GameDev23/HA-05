@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class Manager : MonoBehaviour
     public int PlayerScore = 0;
     public Image TripleShotCooldown;
     public GameObject Player;
+    public GameObject WavePanel;
+    public TextMeshProUGUI WaveTextMesh;
     
     //DECLARE GLOBAL SCENE VARIABLES HERE
     #region VARIABLE DECLARATION

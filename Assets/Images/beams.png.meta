@@ -311,7 +311,7 @@ TextureImporter:
         serializedVersion: 2
         x: 195
         y: 313
-        width: 64
+        width: 8
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -330,9 +330,9 @@ TextureImporter:
       name: beams_10
       rect:
         serializedVersion: 2
-        x: 259
+        x: 306
         y: 313
-        width: 64
+        width: 17
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -437,7 +437,7 @@ TextureImporter:
         serializedVersion: 2
         x: 195
         y: 249
-        width: 64
+        width: 16
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -456,12 +456,12 @@ TextureImporter:
       name: beams_16
       rect:
         serializedVersion: 2
-        x: 259
-        y: 249
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 234
+        y: 264
+        width: 54
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5254941, y: 0.4672222}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -542,7 +542,7 @@ TextureImporter:
         serializedVersion: 2
         x: 131
         y: 185
-        width: 64
+        width: 20
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -561,9 +561,9 @@ TextureImporter:
       name: beams_21
       rect:
         serializedVersion: 2
-        x: 195
+        x: 232
         y: 185
-        width: 64
+        width: 27
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -668,7 +668,7 @@ TextureImporter:
         serializedVersion: 2
         x: 131
         y: 121
-        width: 64
+        width: 5
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -687,10 +687,10 @@ TextureImporter:
       name: beams_27
       rect:
         serializedVersion: 2
-        x: 195
-        y: 121
-        width: 64
-        height: 64
+        x: 163
+        y: 148
+        width: 40
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -53,10 +53,17 @@ public class PlayerMovement : MonoBehaviour
             destroyAnimation.transform.position = transform.position;
             Destroy(gameObject);
         }
+        
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Trigger on Player");
+        if (other.gameObject.CompareTag("EnemyProjectile"))
+        {
+            GameObject destroyAnimation = Instantiate(DestroyAnimation);
+            destroyAnimation.transform.position = transform.position;
+            Destroy(gameObject);
+        }
     }
 }
