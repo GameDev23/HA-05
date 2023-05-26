@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     
     public AudioClip CorneriaTheme;
     public AudioClip BossBeam;
+    public AudioClip GodModeMusic;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
