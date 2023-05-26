@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Snort: {fileID: 8300000, guid: a8009e9a1ae6c3041a8b7a518187b26c, type: 3}
+  shouldGrow: 1
+  DestroyAfterSeconds: 3
 --- !u!58 &248827587162182974
 CircleCollider2D:
   m_ObjectHideFlags: 0
