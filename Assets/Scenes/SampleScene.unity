@@ -5902,10 +5902,10 @@ RectTransform:
   m_Father: {fileID: 612108831}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.150024, y: 443.4}
-  m_SizeDelta: {x: -20.299, y: -932.393}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.00024414062, y: -96.600006}
+  m_SizeDelta: {x: 1920.0006, y: 147.607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712488103
 MonoBehaviour:
@@ -6344,6 +6344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveList:
   - {fileID: 1066411857548224741, guid: 1915713f6e4992c4fb2ebe8fa54d638f, type: 3}
+  - {fileID: 1066411857548224741, guid: a0f34df8916fa4e4ba7296aac83113e3, type: 3}
   bossWaveList:
   - {fileID: 6195834614251066589, guid: 70a1357f647c88d49a6da2055730200b, type: 3}
   waveNumber: 0
