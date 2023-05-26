@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,9 +50,9 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Collision on Player");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameObject destroyAnimation = Instantiate(DestroyAnimation);
-            destroyAnimation.transform.position = transform.position;
-            Destroy(gameObject);
+
+            endGame();
+
         }
         
     }
@@ -61,9 +62,22 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Trigger on Player");
         if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            GameObject destroyAnimation = Instantiate(DestroyAnimation);
-            destroyAnimation.transform.position = transform.position;
-            Destroy(gameObject);
+            endGame();
         }
+    }
+
+    public void endGame()
+    {
+        GameObject destroyAnimation = Instantiate(DestroyAnimation);
+        destroyAnimation.transform.position = transform.position;
+        
+        //TODO put this into IENUMERATOR
+        int currentHigh = PlayerPrefs.GetInt("HighscoreNumber", 0);
+        if (currentHigh < WaveManager.Instance.waveNumber)
+            currentHigh = WaveManager.Instance.waveNumber;
+        
+        PlayerPrefs.SetInt("HighscoreNumber", currentHigh);
+        SceneManager.LoadScene("Menu");
+        Destroy(gameObject);
     }
 }

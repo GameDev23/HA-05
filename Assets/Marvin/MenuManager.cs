@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] TextMeshProUGUI HighscoreNumberText;
+
     void Start()
     {
         int Number;
 
-        if (PlayerPrefs.HasKey("HighscoreNumber"))
-        {
-            Number = PlayerPrefs.GetInt("HighscoreNumber");
 
-        }
-        else
-            HighscoreNumberText.text = "Highscore: " + 0;
+            Number = PlayerPrefs.GetInt("HighscoreNumber", 0);
+            HighscoreNumberText.text = "Highscore: " + (Number == 0 ? 0 : Number - 1);
+
 
 
 
@@ -30,5 +30,10 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnStartClick()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
