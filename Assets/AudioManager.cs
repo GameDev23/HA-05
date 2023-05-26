@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class AudioManager : MonoBehaviour
     
     public AudioClip CorneriaTheme;
     public AudioClip BossBeam;
+    public AudioClip Snort;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
@@ -21,9 +23,7 @@ public class AudioManager : MonoBehaviour
 
     #endregion
     //
-    
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         // create singleton
         if (Instance == null)
@@ -34,7 +34,12 @@ public class AudioManager : MonoBehaviour
         SourceBGM.clip = CorneriaTheme;
         SourceBGM.Play();
         SourceBGM.volume = 0.5f;
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
