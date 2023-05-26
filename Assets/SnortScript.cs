@@ -6,7 +6,9 @@ public class SnortScript : MonoBehaviour
 {
     [SerializeField] private AudioClip Snort;
     [SerializeField] private bool shouldGrow = false;
+    [SerializeField] private bool shouldFollow = false;
     [SerializeField] private float DestroyAfterSeconds = 5f;
+    GameObject FollowTarget;
 
     private float elapsedTime = 0f;
 
@@ -15,6 +17,7 @@ public class SnortScript : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.SourceSFX.PlayOneShot(Snort, 3f);
+        FollowTarget = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -26,5 +29,10 @@ public class SnortScript : MonoBehaviour
         if (elapsedTime >= DestroyAfterSeconds)
             Destroy(gameObject);
         elapsedTime += Time.deltaTime;
+
+        if (shouldFollow)
+        {
+            transform.position = FollowTarget.transform.position;
+        }
     }
 }

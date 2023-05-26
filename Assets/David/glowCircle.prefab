@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 248827587162182972}
   - component: {fileID: 248827587162182971}
   - component: {fileID: 248827587162182974}
+  - component: {fileID: 3071479345933557572}
   m_Layer: 0
   m_Name: glowCircle
   m_TagString: PlayerProjectile
@@ -100,9 +101,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Snort: {fileID: 8300000, guid: a8009e9a1ae6c3041a8b7a518187b26c, type: 3}
   shouldGrow: 1
+  shouldFollow: 1
   DestroyAfterSeconds: 3
+  FollowTarget: {fileID: 5638306657401599879, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
 --- !u!58 &248827587162182974
 CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248827587162182970}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07180337, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.5613513
+--- !u!68 &3071479345933557572
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -114,6 +133,39 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07180337, y: 0}
-  serializedVersion: 2
-  m_Radius: 5.5613513
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 5.0095463, y: 0.027985545}
+  - {x: 5.0431805, y: -1.32363}
+  - {x: 4.285166, y: -2.9857907}
+  - {x: 2.8776078, y: -4.364044}
+  - {x: 1.5217246, y: -4.955751}
+  - {x: -0.4929521, y: -5.206412}
+  - {x: -2.7232056, y: -4.4852085}
+  - {x: -4.0577407, y: -3.2151232}
+  - {x: -4.539165, y: -2.6113045}
+  - {x: -4.8392506, y: -1.966073}
+  - {x: -5.09279, y: -1.1919875}
+  - {x: -5.222018, y: -0.47822174}
+  - {x: -5.242126, y: 0.25130028}
+  - {x: -5.096159, y: 1.0791494}
+  - {x: -4.907975, y: 1.6700605}
+  - {x: -4.604139, y: 2.2834868}
+  - {x: -4.1104245, y: 3.1786828}
+  - {x: -3.5879397, y: 3.7383337}
+  - {x: -3.0112457, y: 4.1773086}
+  - {x: -2.171954, y: 4.63946}
+  - {x: -1.1916109, y: 5.061841}
+  - {x: -0.14307603, y: 5.2017045}
+  - {x: 1.315024, y: 5.080542}
+  - {x: 2.3770177, y: 4.629641}
+  - {x: 3.3307319, y: 4.0076714}
+  - {x: 4.153787, y: 3.0417225}
+  - {x: 4.8374586, y: 1.8427583}
+  - {x: 5.1604123, y: 0.68161434}
+  - {x: 5.1567154, y: -0.0027029887}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
