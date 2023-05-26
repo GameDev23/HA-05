@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,7 +11,7 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> waveList = new List<GameObject>();
     public List<GameObject> bossWaveList = new List<GameObject>();
     public int waveNumber = 0;
-    public int currentIndex = 0;
+    public int currentIndex = -1;
     public int currentBossIndex = 0;
     public bool isWave = false;
     public GameObject currentWave;
@@ -59,35 +60,46 @@ public class WaveManager : MonoBehaviour
         if(waveNumber % 5 != 0)
         {
             //get Normal wave
-            currentIndex++;
-            if ((currentIndex >= waveList.Count && !isRandom) || isRandom)
+            
+            if (isRandom)
             {
                 //cycled through each wave so now they will become random
                 isRandom = true;
                 currentIndex = Random.Range(0, waveList.Count);
             }
-            else if(!isRandom)
+            else
             {
-                currentIndex = (currentIndex + 1) % waveList.Count;
+                currentIndex++;
             }
 
+            if (currentIndex >= waveList.Count)
+            {
+                isRandom = true;
+                currentIndex %= waveList.Count;
+            }
+            Debug.Log("isRandom: " + isRandom + " wavelist.count: " + waveList.Count);
+            Debug.Log("Wave at index " + currentIndex + " gets started");
             return waveList[currentIndex];
         }
         else
         {
             //should be a boss wave
             currentBossIndex++;
-            if ((currentBossIndex >= bossWaveList.Count && !isBossRandom) || isBossRandom)
+            if (isBossRandom)
             {
                 //cycled through each wave so now they will become random
-                isBossRandom = true;
                 currentBossIndex = Random.Range(0, bossWaveList.Count);
             }
-            else if(!isBossRandom)
+            else
             {
-                currentBossIndex = (currentBossIndex + 1) % bossWaveList.Count;
+                currentBossIndex++;
             }
 
+            if (currentBossIndex >= bossWaveList.Count())
+            {
+                isBossRandom = true;
+                currentBossIndex %= bossWaveList.Count();
+            }
             return bossWaveList[currentBossIndex];
         }
 

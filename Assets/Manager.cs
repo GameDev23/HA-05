@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour
     public static Manager Instance;
     public int PlayerScore = 0;
     public Image TripleShotCooldown;
+    public Image SnortCircleCooldown;
     public GameObject Player;
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
