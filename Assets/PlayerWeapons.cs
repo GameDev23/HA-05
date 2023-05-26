@@ -8,12 +8,15 @@ using UnityEngine.Serialization;
 public class PlayerWeapons : MonoBehaviour
 {
     [SerializeField] private GameObject Beam;
+    [SerializeField] private GameObject SnortCircle;
 
     [SerializeField] public float CooldownPrimary = 0.5f;
     [SerializeField] public float CooldownSecondary = 5f;
+    [SerializeField] public float CooldownDavid = 8f;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
+    public float cooldownDavid = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,13 +54,23 @@ public class PlayerWeapons : MonoBehaviour
             cooldownSecondary = CooldownSecondary;
 
         }
+
+        if (Input.GetButton("Fire3") && cooldownDavid <= 0)
+        {
+            GameObject circle = Instantiate(SnortCircle);
+            circle.transform.position = transform.position;
+            cooldownDavid = CooldownDavid;
+        }
         
         //Adjust cooldowns
         float cdSecondary = Manager.toPercent(cooldownSecondary, CooldownSecondary);
         Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
+        float cdDavid = Manager.toPercent(cooldownDavid, CooldownDavid);
+        Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
         
         cooldownPrimary -= Time.deltaTime;
         cooldownSecondary -= Time.deltaTime;
+        cooldownDavid -= Time.deltaTime;
 
     }
 
