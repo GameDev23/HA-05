@@ -35,4 +35,6 @@ public class SnortScript : MonoBehaviour
             transform.position = FollowTarget.transform.position;
         }
     }
+    
+
 }

@@ -248,7 +248,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 44dc0cef03197994097fe7b64db2e216, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f6b129d32223b234fb78abf29f56c8e9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -351,7 +351,7 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 44dc0cef03197994097fe7b64db2e216, type: 2}
   CorneriaTheme: {fileID: 8300000, guid: a608e6a602a142546bd470b76629b62b, type: 3}
   BossBeam: {fileID: 8300000, guid: ef346b3e880c1bc43b5dff31c1301596, type: 3}
-  GodModeMusic: {fileID: 0}
+  GodModeMusic: {fileID: 8300000, guid: f6b129d32223b234fb78abf29f56c8e9, type: 3}
   Snort: {fileID: 8300000, guid: a8009e9a1ae6c3041a8b7a518187b26c, type: 3}
 --- !u!4 &138133852
 Transform:
@@ -1245,6 +1245,7 @@ MonoBehaviour:
   Player: {fileID: 1874763721}
   WavePanel: {fileID: 712488101}
   WaveTextMesh: {fileID: 630188947}
+  DamageNumberPrefab: {fileID: 1588073457851117506, guid: 89c3cadf830659245987c190c4e8ffb0, type: 3}
 --- !u!4 &680330600
 Transform:
   m_ObjectHideFlags: 0

@@ -71,6 +71,9 @@ public class PlayerMovement : MonoBehaviour
         GameObject destroyAnimation = Instantiate(DestroyAnimation);
         destroyAnimation.transform.position = transform.position;
         
+        //Show damage number
+        Manager.Instance.showDamageNumber(transform.position);
+        
         //TODO put this into IENUMERATOR
         int currentHigh = PlayerPrefs.GetInt("HighscoreNumber", 0);
         if (currentHigh < WaveManager.Instance.waveNumber)

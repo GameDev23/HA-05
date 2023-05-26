@@ -32,8 +32,8 @@ public class AudioManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
 
-        SourceBGM.clip = CorneriaTheme;
-        SourceBGM.Play();
+        //SourceBGM.clip = CorneriaTheme;
+        //SourceBGM.Play();
         SourceBGM.volume = 0.5f;
 
     }

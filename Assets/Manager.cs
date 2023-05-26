@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     public GameObject Player;
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
+    public GameObject DamageNumberPrefab;
     
     //DECLARE GLOBAL SCENE VARIABLES HERE
     #region VARIABLE DECLARATION
@@ -42,6 +43,12 @@ public class Manager : MonoBehaviour
         if (a < 0)
             return 0;
         return a / b;
+    }
+
+    public void showDamageNumber(Vector2 pos)
+    {
+        GameObject number = Instantiate(DamageNumberPrefab);
+        number.transform.position = pos + Vector2.left + Vector2.up * 0.5f;
     }
 }
 

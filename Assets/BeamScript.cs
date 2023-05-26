@@ -37,6 +37,7 @@ public class BeamScript : MonoBehaviour
         }else if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit Enemy");
+            //Manager.Instance.showDamageNumber(transform.position);
             AudioManager.Instance.SourceSFX.PlayOneShot(HitSound, 0.6f);
             Destroy(gameObject);
         }else if (other.gameObject.CompareTag("EnemyProjectile") && gameObject.CompareTag("PlayerProjectile"))

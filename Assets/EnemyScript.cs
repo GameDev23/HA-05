@@ -59,6 +59,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerProjectile") || other.gameObject.CompareTag("Player"))
         {
+            Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
         }
     }
@@ -66,6 +67,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
         }
     }
