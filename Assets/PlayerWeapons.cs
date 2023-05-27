@@ -10,13 +10,8 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] private GameObject Beam;
     [SerializeField] private GameObject SnortCircle;
 
-    [SerializeField] public float CooldownPrimary = 0.5f;
-    [SerializeField] public float CooldownSecondary = 5f;
-    [SerializeField] public float CooldownDavid = 8f;
 
-    public float cooldownPrimary = 0f;
-    public float cooldownSecondary = 0f;
-    public float cooldownDavid = 0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +21,15 @@ public class PlayerWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && cooldownPrimary <= 0)
+        if (Input.GetButton("Fire1") && Manager.Instance.cooldownPrimary <= 0)
         {
             //Shoot beam
             GameObject beam = Instantiate(Beam);
             beam.gameObject.transform.position = transform.position + 1f * Vector3.right;
-            cooldownPrimary = CooldownPrimary;
+            Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary;
         }
 
-        if (Input.GetButton("Fire2") && cooldownSecondary <= 0)
+        if (Input.GetButton("Fire2") && Manager.Instance.cooldownSecondary <= 0)
         {
             //Shoot triple beam
             GameObject beam1 = Instantiate(Beam);
@@ -51,26 +46,17 @@ public class PlayerWeapons : MonoBehaviour
             beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
             beam3.transform.localScale += new Vector3(1, 1, 1);
 
-            cooldownSecondary = CooldownSecondary;
+            Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
 
         }
 
-        if (Input.GetButton("Fire3") && cooldownDavid <= 0)
+        if (Input.GetButton("Fire3") && Manager.Instance.cooldownDavid <= 0)
         {
             GameObject circle = Instantiate(SnortCircle);
             circle.transform.position = transform.position;
-            cooldownDavid = CooldownDavid;
+            Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
         }
         
-        //Adjust cooldowns
-        float cdSecondary = Manager.toPercent(cooldownSecondary, CooldownSecondary);
-        Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
-        float cdDavid = Manager.toPercent(cooldownDavid, CooldownDavid);
-        Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
-        
-        cooldownPrimary -= Time.deltaTime;
-        cooldownSecondary -= Time.deltaTime;
-        cooldownDavid -= Time.deltaTime;
 
     }
 

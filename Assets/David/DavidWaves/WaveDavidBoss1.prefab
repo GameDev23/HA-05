@@ -262,6 +262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DavidBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 6461928091568430077, guid: 8f1c61f94d1d7fd4ca96a4a9e03ecd3a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6461928091568430079, guid: 8f1c61f94d1d7fd4ca96a4a9e03ecd3a, type: 3}
       propertyPath: m_RootOrder
       value: 0

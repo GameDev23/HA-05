@@ -11,6 +11,7 @@ public class BossScript : MonoBehaviour
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject DestroyAnimation;
+    [SerializeField] private GameObject DestroyParticle;
     [SerializeField] private GameObject LaserBuilder;
 
     [SerializeField] private float DestroyAnimationScaling = 1f;
@@ -48,11 +49,8 @@ public class BossScript : MonoBehaviour
         {
             //Do explosion
 
-            Manager.Instance.PlayerScore += 1;
-            GameObject explosion = Instantiate(DestroyAnimation);
-            explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
-            explosion.transform.position = transform.position;
-            Destroy(gameObject);
+            
+            //Destroy(gameObject);
         }
 
         if (nextProjectileDelay <= 0)
@@ -75,6 +73,17 @@ public class BossScript : MonoBehaviour
         {
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            if (Health <= 0)
+            {
+                Manager.Instance.PlayerScore += 1;
+                GameObject explosion = Instantiate(DestroyAnimation);
+                explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
+                explosion.transform.position = transform.position;
+                GameObject particle = Instantiate(DestroyParticle);
+                particle.transform.position = transform.position;
+                particle.transform.localScale *= 3;
+                Destroy(gameObject);
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -83,6 +92,17 @@ public class BossScript : MonoBehaviour
         {
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            if (Health <= 0)
+            {
+                Manager.Instance.PlayerScore += 1;
+                GameObject explosion = Instantiate(DestroyAnimation);
+                explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
+                explosion.transform.position = transform.position;
+                GameObject particle = Instantiate(DestroyParticle);
+                particle.transform.position = transform.position;
+                particle.transform.localScale *= 3;
+                Destroy(gameObject);
+            }
         }
     }
 

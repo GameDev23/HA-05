@@ -353,6 +353,7 @@ MonoBehaviour:
   BossBeam: {fileID: 8300000, guid: ef346b3e880c1bc43b5dff31c1301596, type: 3}
   GodModeMusic: {fileID: 8300000, guid: f6b129d32223b234fb78abf29f56c8e9, type: 3}
   Snort: {fileID: 8300000, guid: a8009e9a1ae6c3041a8b7a518187b26c, type: 3}
+  LetMeDoItForYou: {fileID: 8300000, guid: 43b4c92fce5dd8b4c8068e0cd348abf0, type: 3}
 --- !u!4 &138133852
 Transform:
   m_ObjectHideFlags: 0
@@ -1246,6 +1247,12 @@ MonoBehaviour:
   WavePanel: {fileID: 712488101}
   WaveTextMesh: {fileID: 630188947}
   DamageNumberPrefab: {fileID: 1588073457851117506, guid: 89c3cadf830659245987c190c4e8ffb0, type: 3}
+  CooldownPrimary: 0.3
+  CooldownSecondary: 2.5
+  CooldownDavid: 8
+  cooldownPrimary: 0
+  cooldownSecondary: 0
+  cooldownDavid: 0
 --- !u!4 &680330600
 Transform:
   m_ObjectHideFlags: 0
@@ -1728,8 +1735,8 @@ EdgeCollider2D:
   - {x: -5.3974285, y: -5.435561}
   - {x: -5.4103937, y: 4.6284866}
   - {x: -0.45769882, y: 4.6636276}
-  - {x: -0.3804903, y: 4.917361}
-  - {x: 12.591973, y: 4.821712}
+  - {x: -0.017846823, y: 4.6663003}
+  - {x: 12.489689, y: 4.682234}
   - {x: 12.4635105, y: -5.4143815}
   - {x: -4.7750454, y: -5.4111085}
   - {x: -5.38352, y: -5.410993}
@@ -2045,3 +2052,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5e7bb324dd309b4ebd8c597c69dcb28, type: 3}
+--- !u!1001 &6202609198462134064
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6202609200145119680, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119680, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119680, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7576012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1495832
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2862821
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119681, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119709, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_Name
+      value: Explosion Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202609200145119709, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}

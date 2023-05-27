@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject DestroyAnimation;
+    [SerializeField] private GameObject DestroyParticle;
 
     [SerializeField] private float DestroyAnimationScaling = 1f;
 
@@ -42,6 +43,9 @@ public class EnemyScript : MonoBehaviour
             GameObject explosion = Instantiate(DestroyAnimation);
             explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
             explosion.transform.position = transform.position;
+            
+            GameObject particle = Instantiate(DestroyParticle);
+            particle.transform.position = transform.position;
             Destroy(gameObject);
         }
 

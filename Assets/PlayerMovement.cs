@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] float Speed = 10;
     [SerializeField] private GameObject DestroyAnimation;
+    [SerializeField] private GameObject DestroyParticle;
     private Rigidbody2D rg;
+    private bool isGodmode = false;
+    private float toggleGodmodeCD = 1f;
+    private float elapsedTime = 0f;
     
     
     
@@ -35,13 +39,28 @@ public class PlayerMovement : MonoBehaviour
         {
             rg.AddForce(new Vector2(xMov * Speed, yMov * Speed));
         }
+        
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (Input.GetButtonDown("Enable Debug Button 1"))
+        {
+            Debug.Log("Toggle Godmode: " + !isGodmode);
+            //toggle godmode
+            isGodmode = !isGodmode;
+            if(isGodmode)
+            {
+                AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.LetMeDoItForYou, 2f);
+                //TODO indicate godmode
+            }
 
+            
+        }
         
     }
     
@@ -68,19 +87,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void endGame()
     {
+        if (isGodmode)
+            return;  // dont do any damage calculations in godmode
+        
         GameObject destroyAnimation = Instantiate(DestroyAnimation);
         destroyAnimation.transform.position = transform.position;
+        
+        GameObject particle = Instantiate(DestroyParticle);
+        particle.transform.position = transform.position;
+
         
         //Show damage number
         Manager.Instance.showDamageNumber(transform.position);
         
-        //TODO put this into IENUMERATOR
         int currentHigh = PlayerPrefs.GetInt("HighscoreNumber", 0);
         if (currentHigh < WaveManager.Instance.waveNumber)
             currentHigh = WaveManager.Instance.waveNumber;
         
         PlayerPrefs.SetInt("HighscoreNumber", currentHigh);
-        SceneManager.LoadScene("Menu");
+        Manager.Instance.backToMenu();
         Destroy(gameObject);
     }
 }

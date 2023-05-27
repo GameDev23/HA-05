@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
@@ -14,6 +15,14 @@ public class Manager : MonoBehaviour
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
     public GameObject DamageNumberPrefab;
+    
+    public float CooldownPrimary = 0.5f;
+    public float CooldownSecondary = 5f;
+    public float CooldownDavid = 8f;
+
+    public float cooldownPrimary = 0f;
+    public float cooldownSecondary = 0f;
+    public float cooldownDavid = 0f;
     
     //DECLARE GLOBAL SCENE VARIABLES HERE
     #region VARIABLE DECLARATION
@@ -36,6 +45,16 @@ public class Manager : MonoBehaviour
     void Update()
     {
         
+        //Adjust cooldowns
+        float cdSecondary = toPercent(cooldownSecondary, CooldownSecondary);
+        TripleShotCooldown.fillAmount = cdSecondary;
+        float cdDavid = toPercent(cooldownDavid, CooldownDavid);
+        SnortCircleCooldown.fillAmount = cdDavid;
+        
+        cooldownPrimary -= Time.deltaTime;
+        cooldownSecondary -= Time.deltaTime;
+        cooldownDavid -= Time.deltaTime;
+
     }
 
     public static float toPercent(float a, float b)
@@ -49,6 +68,24 @@ public class Manager : MonoBehaviour
     {
         GameObject number = Instantiate(DamageNumberPrefab);
         number.transform.position = pos + Vector2.left + Vector2.up * 0.5f;
+    }
+
+    public void backToMenu()
+    {
+        StartCoroutine(toMenu());
+    }
+
+    IEnumerator toMenu()
+    {
+        AudioSource SourceToFadeOut = AudioManager.Instance.SourceBGM;
+        
+        for (int i = 0; i < 20; i++)
+        {
+            SourceToFadeOut.volume *= 0.72f; // gradually decrease volume
+            yield return new WaitForSeconds(0.1f);
+        }
+        //Switch to menu after music faded out
+        SceneManager.LoadScene("Menu");
     }
 }
 

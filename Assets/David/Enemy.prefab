@@ -129,6 +129,7 @@ MonoBehaviour:
   Health: 1
   projectile: {fileID: 2205609354309998046, guid: 0767e62992a920f41951c203724c419e, type: 3}
   DestroyAnimation: {fileID: 6469208720404049894, guid: 03edc74619dd6e54e8ebce847ae66a44, type: 3}
+  DestroyParticle: {fileID: 6202609200145119709, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
   DestroyAnimationScaling: 1
   nextProjectileDelay: 2
   minDelay: 0.5
@@ -177,4 +178,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

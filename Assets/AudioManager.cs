@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip BossBeam;
     public AudioClip GodModeMusic;
     public AudioClip Snort;
+    public AudioClip LetMeDoItForYou;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
