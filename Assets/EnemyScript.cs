@@ -47,6 +47,8 @@ public class EnemyScript : MonoBehaviour
             GameObject particle = Instantiate(DestroyParticle);
             particle.transform.position = transform.position;
             Destroy(gameObject);
+            //Show dialog
+            Manager.Instance.ShouldShowDialog = true;
         }
 
         if (nextProjectileDelay <= 0)
@@ -65,6 +67,7 @@ public class EnemyScript : MonoBehaviour
         {
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -73,6 +76,7 @@ public class EnemyScript : MonoBehaviour
         {
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+
         }
     }
 }

@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource SourceBGM;
     public AudioSource SourceSFX;
+    public AudioSource SourceSFXEcho;
     public AudioMixer mixer;
     
     public AudioClip CorneriaTheme;
@@ -17,6 +18,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip GodModeMusic;
     public AudioClip Snort;
     public AudioClip LetMeDoItForYou;
+    public AudioClip Quaso;
+    public List<AudioClip> DavidDialog;
+    public List<AudioClip> MarvinDialog;
+    public List<AudioClip> SamwelDialog;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION

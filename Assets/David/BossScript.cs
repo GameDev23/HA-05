@@ -47,10 +47,9 @@ public class BossScript : MonoBehaviour
     {
         if (Health <= 0)
         {
-            //Do explosion
-
-            
-            //Destroy(gameObject);
+            //Show dialog
+            Manager.Instance.ShouldShowDialog = true;
+            Destroy(gameObject);
         }
 
         if (nextProjectileDelay <= 0)
@@ -82,7 +81,7 @@ public class BossScript : MonoBehaviour
                 GameObject particle = Instantiate(DestroyParticle);
                 particle.transform.position = transform.position;
                 particle.transform.localScale *= 3;
-                Destroy(gameObject);
+
             }
         }
     }
@@ -101,7 +100,6 @@ public class BossScript : MonoBehaviour
                 GameObject particle = Instantiate(DestroyParticle);
                 particle.transform.position = transform.position;
                 particle.transform.localScale *= 3;
-                Destroy(gameObject);
             }
         }
     }
