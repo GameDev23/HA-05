@@ -7,16 +7,22 @@ using UnityEngine.Serialization;
 
 public class PlayerWeapons : MonoBehaviour
 {
+    // David
     [SerializeField] private GameObject Beam;
     [SerializeField] private GameObject SnortCircle;
+
+    //  Samwel
+    [SerializeField] private GameObject HellFlame;
 
     [SerializeField] public float CooldownPrimary = 0.5f;
     [SerializeField] public float CooldownSecondary = 5f;
     [SerializeField] public float CooldownDavid = 8f;
+    [SerializeField] public float CoolddownSamwel;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
     public float cooldownDavid = 0f;
+    public float cooldownSamwel= 0f;
     // Start is called before the first frame update
     void Start()
     {

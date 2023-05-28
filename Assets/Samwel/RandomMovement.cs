@@ -60,7 +60,7 @@ public class RandomMovement : MonoBehaviour
         }
 
         // Generate a random direction vector
-        randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-2f, 1f));
         randomDirection.Normalize();
         randomDirection *= 10f; // You can adjust the magnitude of the random direction here
     }
