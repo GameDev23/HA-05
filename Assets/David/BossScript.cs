@@ -48,7 +48,7 @@ public class BossScript : MonoBehaviour
         if (Health <= 0)
         {
             //Show dialog
-            Manager.Instance.ShouldShowDialog = true;
+            //Manager.Instance.ShouldShowDialog = true;
             Destroy(gameObject);
         }
 
@@ -68,8 +68,9 @@ public class BossScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerProjectile") || other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("PlayerProjectile"))
         {
+            Debug.Log("Hit Trigger on Boss");
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
             if (Health <= 0)
@@ -87,8 +88,9 @@ public class BossScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || !other.gameObject.CompareTag("PlayerProjectile"))
         {
+            Debug.Log("Hit Collider on Boss");
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
             if (Health <= 0)
