@@ -12,12 +12,12 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] private GameObject SnortCircle;
 
     //  Samwel
-    [SerializeField] private GameObject HellFlame;
+    [SerializeField] private GameObject Lightning;
 
     [SerializeField] public float CooldownPrimary = 0.5f;
     [SerializeField] public float CooldownSecondary = 5f;
     [SerializeField] public float CooldownDavid = 8f;
-    [SerializeField] public float CoolddownSamwel;
+    [SerializeField] public float CoolddownSamwel = 8f;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
@@ -50,10 +50,10 @@ public class PlayerWeapons : MonoBehaviour
             Vector3 pos = transform.position;
             beam1.transform.localScale += new Vector3(1, 1, 1);
             beam1.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.up;
-            
+
             beam2.transform.position = pos + 1f * Vector3.right;
             beam2.transform.localScale += new Vector3(1, 1, 1);
-            
+
             beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
             beam3.transform.localScale += new Vector3(1, 1, 1);
 
@@ -67,7 +67,12 @@ public class PlayerWeapons : MonoBehaviour
             circle.transform.position = transform.position;
             cooldownDavid = CooldownDavid;
         }
-        
+
+        if (Input.GetButton("Fire4") && cooldownDavid <= 0)
+        {
+            GameObject lightning = Instantiate(Lightning);
+        }
+
         //Adjust cooldowns
         float cdSecondary = Manager.toPercent(cooldownSecondary, CooldownSecondary);
         Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;

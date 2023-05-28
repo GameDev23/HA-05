@@ -428,6 +428,7 @@ MonoBehaviour:
   CorneriaTheme: {fileID: 8300000, guid: a608e6a602a142546bd470b76629b62b, type: 3}
   BossBeam: {fileID: 8300000, guid: ef346b3e880c1bc43b5dff31c1301596, type: 3}
   Snort: {fileID: 8300000, guid: a8009e9a1ae6c3041a8b7a518187b26c, type: 3}
+  Zap: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
 --- !u!4 &138133852
 Transform:
   m_ObjectHideFlags: 0
@@ -6849,63 +6850,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1001 &4207244575887814310
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4235304984009717326, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_Name
-      value: Lightning
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.0382872
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.35904098
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -20.08664
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101611396299807740, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
 --- !u!1001 &5638306657895901262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6913,6 +6857,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5638306657401599874, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
+      propertyPath: Lighning
+      value: 
+      objectReference: {fileID: 4235304984009717326, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
     - target: {fileID: 5638306657401599874, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
       propertyPath: SnortCircle
       value: 

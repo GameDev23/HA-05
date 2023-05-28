@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip CorneriaTheme;
     public AudioClip BossBeam;
     public AudioClip Snort;
+    public AudioClip Zap;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
