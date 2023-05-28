@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource SourceBGM;
     public AudioSource SourceSFX;
     public AudioSource SourceSFXEcho;
-    public AudioMixer mixer;
+    public AudioMixer Mixer;
     
     public AudioClip CorneriaTheme;
     public AudioClip BossBeam;
