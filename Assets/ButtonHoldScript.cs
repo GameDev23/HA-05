@@ -10,6 +10,7 @@ public class ButtonHoldScript : MonoBehaviour
     [SerializeField] private float holdDuration = 1f;
 
     [SerializeField] private Image image;
+    [SerializeField] private string name;
 
     private bool isPressed = false;
     private bool isStarted = false;
@@ -41,6 +42,7 @@ public class ButtonHoldScript : MonoBehaviour
     public void OnPointerDown(BaseEventData eventData)
     {
         isPressed = true;
+        PlayerPrefs.SetString("Character", name);
     }
     
     public void OnPointerUp(BaseEventData eventData)

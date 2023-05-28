@@ -38,6 +38,7 @@ public class Manager : MonoBehaviour
     public Color32 DavidColor = new Color32(126, 131, 255, 255);
     public Color32 MarvinColor =new Color32(72, 183, 144, 255);
     public Color32 SamwelColor = new Color32(255, 144, 20, 255);
+    public Color32 PickedColor = new Color32(126, 131, 255, 255);
 
     public float CooldownPrimary = 0.5f;
     public float CooldownSecondary = 5f;
@@ -49,7 +50,7 @@ public class Manager : MonoBehaviour
 
     public bool ShouldShowDialog = false;
     private bool showingDialog = false;
-    public String character = "David";
+    String character = "David";
 
     //DECLARE GLOBAL SCENE VARIABLES HERE
 
@@ -95,6 +96,7 @@ public class Manager : MonoBehaviour
                 break;
         }
         Debug.Log("Char: " + character + " and color of: " + charColor);
+        PickedColor = charColor;
         Color temp = charColor;
         temp.a = 255;
         DialogCharacterImage.sprite = img;
@@ -169,29 +171,36 @@ public class Manager : MonoBehaviour
             rect.sizeDelta += new Vector2(1000 * Time.deltaTime, 0);
             yield return null;
         }
-        // get random prompt and type it to panel
-        if(DialogesDavid.Count > 0)
-        {
-            //init character specific things
-            List<String> charDialogs = new List<string>();
-            List<AudioClip> DialogClips = new List<AudioClip>();
-            switch (character)
-            {
-                case "David":
-                    charDialogs = DialogesDavid;
-                    DialogClips = AudioManager.Instance.DavidDialog;
-                    break;
-                case "Marvin":
-                    charDialogs = DialogesMarvin;
-                    DialogClips = AudioManager.Instance.MarvinDialog;
-                    break;
-                case "Samwel":
-                    charDialogs = DialogesSamwel;
-                    DialogClips = AudioManager.Instance.SamwelDialog;
-                    break;
-            }
 
+        character = PlayerPrefs.GetString("Character", "David");
+        
+        //init character specific things
+        List<String> charDialogs = new List<string>();
+        List<AudioClip> DialogClips = new List<AudioClip>();
+        switch (character)
+        {
+            case "David":
+                charDialogs = DialogesDavid;
+                DialogClips = AudioManager.Instance.DavidDialog;
+                break;
+            case "Marvin":
+                charDialogs = DialogesMarvin;
+                DialogClips = AudioManager.Instance.MarvinDialog;
+                break;
+            case "Samwel":
+                charDialogs = DialogesSamwel;
+                DialogClips = AudioManager.Instance.SamwelDialog;
+                break;
             
+            default:
+                charDialogs = DialogesDavid;
+                DialogClips = AudioManager.Instance.DavidDialog;
+                break;
+        }
+        Debug.Log("DIALOG: " + character + " and array of: " + charDialogs.ToString());
+        // get random prompt and type it to panel
+        if(charDialogs.Count > 0)
+        {
             
             // get random voiceline
             if (DialogClips.Count > 0)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class BeamScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BeamScript : MonoBehaviour
     [SerializeField] private float ySpeed = 0;
     [SerializeField] AudioClip ShootSound;
     [SerializeField] AudioClip HitSound;
+    [SerializeField] private bool isPlayerProjectile;
     
     private Rigidbody2D rg;
 
@@ -20,6 +22,14 @@ public class BeamScript : MonoBehaviour
     {
         rg = gameObject.GetComponent<Rigidbody2D>();
         rg.velocity = new Vector2(xSpeed, ySpeed);
+        if(isPlayerProjectile)
+        {
+            SpriteRenderer img = gameObject.GetComponent<SpriteRenderer>();
+            Color temp = Manager.Instance.PickedColor;
+            temp.a = 255;
+            img.color = temp;
+        }
+        
         AudioManager.Instance.SourceSFX.PlayOneShot(ShootSound, 1f);
     }
 
