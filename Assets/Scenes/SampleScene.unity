@@ -1536,15 +1536,15 @@ MonoBehaviour:
   - Ein Triumph der Gerechtigkeit!
   - Die Galaxie atmet auf, ein weiterer Gegner besiegt!
   DialogesMarvin:
-  - "\u654C\u4EBA\u5DF2\u88AB\u6D88\u706D \\n (The enemy has been eliminated!)"
-  - "\u51FB\u8D25\u654C\u4EBA\u662F\u6211\u4EEC\u7684\u4F7F\u547D  \\n(Defeating
+  - "\u654C\u4EBA\u5DF2\u88AB\u6D88\u706D! \\n (The enemy has been eliminated!)"
+  - "\u51FB\u8D25\u654C\u4EBA\u662F\u6211\u4EEC\u7684\u4F7F\u547D!  \\n(Defeating
     enemies is our mission!)"
-  - "\u518D\u4E5F\u6CA1\u6709\u654C\u4EBA\u53EF\u4EE5\u963B\u6B62\u6211\u4EEC  \\n(No
+  - "\u518D\u4E5F\u6CA1\u6709\u654C\u4EBA\u53EF\u4EE5\u963B\u6B62\u6211\u4EEC!  \\n(No
     enemy can stop us anymore!)"
-  - "\u654C\u4EBA\u5C1D\u5230\u4E86\u5931\u8D25\u7684\u6ECB\u5473 \\n(The enemy tastes
-    the bitterness of defeat!)"
-  - "\u76F4\u51FB\uFF01\u654C\u4EBA\u6E05\u9664 \\n(Direct hit! Enemy eradicated!)"
-  - "\u654C\u65B9\u5355\u4F4D\u6467\u6BC1 \u5E72\u5F97\u597D \\n(Enemy unit destroyed!
+  - "\u654C\u4EBA\u5C1D\u5230\u4E86\u5931\u8D25\u7684\u6ECB\u5473! \\n(The enemy
+    tastes the bitterness of defeat!)"
+  - "\u76F4\u51FB! \u654C\u4EBA\u6E05\u9664! \\n(Direct hit! Enemy eradicated!)"
+  - "\u654C\u65B9\u5355\u4F4D\u6467\u6BC1!\u5E72\u5F97\u597D \\n(Enemy unit destroyed!
     Well done!)"
   DialogesSamwel:
   - I always win. It's a fact. Tremendous!
