@@ -360,8 +360,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 90fa4baadf3181f4098ab30d1ed293e5, type: 3}
   - {fileID: 8300000, guid: 34e5387e4195c5346b590b7e507d59f7, type: 3}
   - {fileID: 8300000, guid: 74459ab3ff00fe2498756311c0dc93bc, type: 3}
-  MarvinDialog: []
-  SamwelDialog: []
+  - {fileID: 8300000, guid: 3bb28158f02770e499b7fd7f52f52af0, type: 3}
+  - {fileID: 8300000, guid: c901b51e36f0eec43a6f23804c7179dc, type: 3}
+  - {fileID: 8300000, guid: 7136e897117f49948a7f87101a551719, type: 3}
+  MarvinDialog:
+  - {fileID: 8300000, guid: 3af2c6e5908487148b325e25b8fd5f66, type: 3}
+  - {fileID: 8300000, guid: b5f81ef8268679241b3e36c441a0ee5e, type: 3}
+  - {fileID: 8300000, guid: 63b929cef79966e4c806de1e7fd3d04d, type: 3}
+  - {fileID: 8300000, guid: b6b20fd47d1f4a441895becd641e4c2a, type: 3}
+  - {fileID: 8300000, guid: ea093f65b1f685f418c5b0fbcf40eb0a, type: 3}
+  SamwelDialog:
+  - {fileID: 8300000, guid: 2ea65802e6a24264099d1473eeb1aed4, type: 3}
+  - {fileID: 8300000, guid: 013fc3e18466d6e4da49fe1680300bd6, type: 3}
+  - {fileID: 8300000, guid: 9e835847db7c3934f935adcd9211cc0a, type: 3}
+  - {fileID: 8300000, guid: 79625ac67b4134145b1b9dd336af7b4b, type: 3}
+  - {fileID: 8300000, guid: 3defa36c103e70d4485a7b66d4e32379, type: 3}
+  - {fileID: 8300000, guid: d768f17ee1c66a04eac161a68a0098d2, type: 3}
 --- !u!4 &138133852
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,19 +1527,25 @@ MonoBehaviour:
   DialogCharacterImage: {fileID: 1437193378}
   DialogCircleImage: {fileID: 292956059}
   DialogesDavid:
-  - We got him!
-  - Nice shot
-  - Exmatriculated! Ha-ha
-  - This was easy
-  - Another one bites the dust
+  - Den haben wir erwischt!
+  - Guter Schuss
+  - Exmatrikuliert!
+  - Nichts leichter als das
+  - Das war ein Volltreffer!
+  - "Ziel neutralisiert! Der Himmel geh\xF6rt uns!"
+  - Ein Triumph der Gerechtigkeit!
+  - Die Galaxie atmet auf, ein weiterer Gegner besiegt!
   DialogesMarvin:
-  - "\u654C\u4EBA\u5DF2\u88AB\u6D88\u706D\uFF01\\n (The enemy has been eliminated!)"
-  - "\u51FB\u8D25\u654C\u4EBA\u662F\u6211\u4EEC\u7684\u4F7F\u547D\uFF01 \\n(Defeating
+  - "\u654C\u4EBA\u5DF2\u88AB\u6D88\u706D \\n (The enemy has been eliminated!)"
+  - "\u51FB\u8D25\u654C\u4EBA\u662F\u6211\u4EEC\u7684\u4F7F\u547D  \\n(Defeating
     enemies is our mission!)"
-  - "\u518D\u4E5F\u6CA1\u6709\u654C\u4EBA\u53EF\u4EE5\u963B\u6B62\u6211\u4EEC\uFF01
-    \\n(No enemy can stop us anymore!)"
-  - "\u654C\u4EBA\u5C1D\u5230\u4E86\u5931\u8D25\u7684\u6ECB\u5473\uFF01 \\n(The enemy
-    tastes the bitterness of defeat!)"
+  - "\u518D\u4E5F\u6CA1\u6709\u654C\u4EBA\u53EF\u4EE5\u963B\u6B62\u6211\u4EEC  \\n(No
+    enemy can stop us anymore!)"
+  - "\u654C\u4EBA\u5C1D\u5230\u4E86\u5931\u8D25\u7684\u6ECB\u5473 \\n(The enemy tastes
+    the bitterness of defeat!)"
+  - "\u76F4\u51FB\uFF01\u654C\u4EBA\u6E05\u9664 \\n(Direct hit! Enemy eradicated!)"
+  - "\u654C\u65B9\u5355\u4F4D\u6467\u6BC1 \u5E72\u5F97\u597D \\n(Enemy unit destroyed!
+    Well done!)"
   DialogesSamwel:
   - I always win. It's a fact. Tremendous!
   - Im just a businessman doing business
@@ -1543,6 +1563,9 @@ MonoBehaviour:
   SamwelColor:
     serializedVersion: 2
     rgba: 1347583
+  PickedColor:
+    serializedVersion: 2
+    rgba: 4294935422
   CooldownPrimary: 0.3
   CooldownSecondary: 2.5
   CooldownDavid: 8
@@ -1550,7 +1573,6 @@ MonoBehaviour:
   cooldownSecondary: 0
   cooldownDavid: 0
   ShouldShowDialog: 0
-  character: Samwel
 --- !u!4 &680330600
 Transform:
   m_ObjectHideFlags: 0

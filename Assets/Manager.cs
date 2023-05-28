@@ -50,6 +50,7 @@ public class Manager : MonoBehaviour
 
     public bool ShouldShowDialog = false;
     private bool showingDialog = false;
+    private int lastIndex = 0;
     String character = "David";
 
     //DECLARE GLOBAL SCENE VARIABLES HERE
@@ -133,6 +134,7 @@ public class Manager : MonoBehaviour
     {
         GameObject number = Instantiate(DamageNumberPrefab);
         number.transform.position = pos + Vector2.left + Vector2.up * 0.5f;
+        number.transform.position += new Vector3(1, 0, 0) * UnityEngine.Random.Range(-0.3f, 0.3f);
     }
 
     public void backToMenu()
@@ -197,7 +199,9 @@ public class Manager : MonoBehaviour
                 DialogClips = AudioManager.Instance.DavidDialog;
                 break;
         }
+        
         Debug.Log("DIALOG: " + character + " and array of: " + charDialogs.ToString());
+        
         // get random prompt and type it to panel
         if(charDialogs.Count > 0)
         {
@@ -205,6 +209,17 @@ public class Manager : MonoBehaviour
             // get random voiceline
             if (DialogClips.Count > 0)
             {
+                int rand;
+                //try to get voiceline which is not played before
+                for (int i = 0; i < 10; i++)
+                {
+                    rand = UnityEngine.Random.Range(0, DialogClips.Count());
+                    if (rand != lastIndex)
+                    {
+                        rand = lastIndex;
+                        break;
+                    }
+                }
                 AudioManager.Instance.SourceSFX.PlayOneShot(DialogClips[UnityEngine.Random.Range(0, DialogClips.Count())]);
             }
             // get random prompt

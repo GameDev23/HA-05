@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
         //SourceBGM.clip = CorneriaTheme;
         //SourceBGM.Play();
-        SourceBGM.volume = 0.5f;
+        SourceBGM.volume = 0.4f;
 
     }
 
