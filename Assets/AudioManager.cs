@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> DavidDialog;
     public List<AudioClip> MarvinDialog;
     public List<AudioClip> SamwelDialog;
+    public AudioClip Zap;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
