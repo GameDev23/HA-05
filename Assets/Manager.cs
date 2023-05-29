@@ -221,7 +221,7 @@ public class Manager : MonoBehaviour
                 break;
         }
         
-        Debug.Log("DIALOG: " + character + " and array of: " + charDialogs.ToString());
+        Debug.Log("DIALOG: " + character + " and array of: " + charDialogs);
         
         // get random prompt and type it to panel
         if(charDialogs.Count > 0)
@@ -230,18 +230,20 @@ public class Manager : MonoBehaviour
             // get random voiceline
             if (DialogClips.Count > 0)
             {
-                int rand;
+                int rand = 0;
                 //try to get voiceline which is not played before
                 for (int i = 0; i < 10; i++)
                 {
-                    rand = UnityEngine.Random.Range(0, DialogClips.Count());
+                    Debug.Log("INSIDE OF RAND FUNCTION with parameters " + 0 + "  " + DialogClips.Count);
+                    rand = UnityEngine.Random.Range(0, DialogClips.Count);
                     if (rand != lastIndex)
                     {
-                        rand = lastIndex;
+                        lastIndex = rand;
                         break;
                     }
                 }
-                AudioManager.Instance.SourceSFX.PlayOneShot(DialogClips[UnityEngine.Random.Range(0, DialogClips.Count())]);
+                Debug.Log("Using Rand: " + rand);
+                AudioManager.Instance.SourceSFX.PlayOneShot(DialogClips[rand]);
             }
             // get random prompt
             String text = "";

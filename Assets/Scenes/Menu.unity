@@ -567,10 +567,11 @@ MonoBehaviour:
   GodModeMusic: {fileID: 8300000, guid: 2e02d0a59fbe140429e63d8c30ceea32, type: 3}
   Snort: {fileID: 8300000, guid: a8009e9a1ae6c3041a8b7a518187b26c, type: 3}
   LetMeDoItForYou: {fileID: 8300000, guid: 43b4c92fce5dd8b4c8068e0cd348abf0, type: 3}
-  Quaso: {fileID: 8300000, guid: 5303c728edead1c4080e96d283004e70, type: 3}
+  Quaso: {fileID: 8300000, guid: d5f8bf5e581b1d748b790e0f22056e8e, type: 3}
   DavidDialog: []
   MarvinDialog: []
   SamwelDialog: []
+  Zap: {fileID: 0}
 --- !u!4 &137015440
 Transform:
   m_ObjectHideFlags: 0
@@ -595,7 +596,7 @@ AudioSource:
   m_GameObject: {fileID: 137015436}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -1177480101695332829, guid: 44dc0cef03197994097fe7b64db2e216, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 44dc0cef03197994097fe7b64db2e216, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
