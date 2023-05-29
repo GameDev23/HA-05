@@ -13,7 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource SourceSFXEcho;
     public AudioMixer Mixer;
     
-    public AudioClip CorneriaTheme;
+    public AudioClip BGMMenu;
+    public AudioClip BGMGame;
     public AudioClip BossBeam;
     public AudioClip GodModeMusic;
     public AudioClip Snort;
@@ -41,8 +42,10 @@ public class AudioManager : MonoBehaviour
 
         //SourceBGM.clip = CorneriaTheme;
         //SourceBGM.Play();
-        SourceBGM.volume = 0.4f;
-
+        AudioManager.Instance.SourceBGM.clip = BGMMenu;
+        AudioManager.Instance.SourceBGM.volume = 0.4f;
+        AudioManager.Instance.SourceBGM.Play();
+        
     }
 
     // Update is called once per frame

@@ -18,6 +18,9 @@ public class MenuManager : MonoBehaviour
             Number = PlayerPrefs.GetInt("HighscoreNumber", 0);
             HighscoreNumberText.text = "Highscore: " + (Number == 0 ? 0 : Number - 1);
             
+            if (AudioManager.Instance.SourceBGM.clip != AudioManager.Instance.BGMMenu)
+                AudioManager.Instance.SourceBGM.clip = AudioManager.Instance.BGMMenu;
+            AudioManager.Instance.SourceBGM.Play();
     }
 
     // Update is called once per frame

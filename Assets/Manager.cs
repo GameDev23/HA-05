@@ -23,6 +23,8 @@ public class Manager : MonoBehaviour
     public GameObject DamageNumberPrefab;
     public GameObject GodModePanel;
     public TextMeshProUGUI GodModeText;
+    public AudioClip BGMMenu;
+    public AudioClip BGMGame;
     
     public TextMeshProUGUI DialogTextMesh;
     public GameObject DialogPanel;
@@ -52,6 +54,7 @@ public class Manager : MonoBehaviour
 
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
+    public bool isMenu = true;
     private bool showingDialog = false;
     private int lastIndex = 0;
     
@@ -113,6 +116,14 @@ public class Manager : MonoBehaviour
         godmodePanelWidth = rect.rect.width;
         // fade panel in
         rect.sizeDelta = new Vector2(-2000, -1000);
+        
+        //init sound
+        
+        if (AudioManager.Instance.SourceBGM.clip != AudioManager.Instance.BGMGame)
+            AudioManager.Instance.SourceBGM.clip = AudioManager.Instance.BGMGame;
+        
+
+        AudioManager.Instance.SourceBGM.Play();
     }
 
     // Update is called once per frame

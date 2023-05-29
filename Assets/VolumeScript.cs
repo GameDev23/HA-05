@@ -14,6 +14,11 @@ public class VolumeScript : MonoBehaviour
             AudioManager.Instance.Mixer.SetFloat("MainVol", Mathf.Log10(volume) * 40);
             PlayerPrefs.SetFloat("MainVol", volume);
         }
+        else
+        {
+            AudioManager.Instance.Mixer.SetFloat("MainVol", -80);
+            PlayerPrefs.SetFloat("MainVol", -80);
+        }
 
     }
 
