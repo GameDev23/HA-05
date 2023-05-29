@@ -21,6 +21,8 @@ public class Manager : MonoBehaviour
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
     public GameObject DamageNumberPrefab;
+    public GameObject GodModePanel;
+    public TextMeshProUGUI GodModeText;
     
     public TextMeshProUGUI DialogTextMesh;
     public GameObject DialogPanel;
@@ -49,8 +51,11 @@ public class Manager : MonoBehaviour
     public float cooldownDavid = 0f;
 
     public bool ShouldShowDialog = false;
+    public bool isGodmode = false;
     private bool showingDialog = false;
     private int lastIndex = 0;
+    
+    private float godmodePanelWidth;
     String character = "David";
 
     //DECLARE GLOBAL SCENE VARIABLES HERE
@@ -104,6 +109,10 @@ public class Manager : MonoBehaviour
         DialogCircleImage.color = temp;
         DialogTextMesh.color = temp;
         DialogPanelImage.color = temp;
+        RectTransform rect = ((RectTransform)GodModePanel.transform);
+        godmodePanelWidth = rect.rect.width;
+        // fade panel in
+        rect.sizeDelta = new Vector2(-2000, -1000);
     }
 
     // Update is called once per frame
@@ -161,6 +170,22 @@ public class Manager : MonoBehaviour
         showingDialog = true;
         StartCoroutine(Dialog());
 
+    }
+
+    public void toggleGodmode()
+    {
+        if (isGodmode)
+        {
+            //hide panel here
+            StartCoroutine(toggleGMod(isGodmode));
+        }
+        else
+        {
+            //show panel here
+            StartCoroutine(toggleGMod(isGodmode));
+        }
+        //toggle godmode
+        isGodmode = !isGodmode;
     }
 
     IEnumerator Dialog()
@@ -250,6 +275,46 @@ public class Manager : MonoBehaviour
 
         ShouldShowDialog = false;
         showingDialog = false;
+    }
+
+    IEnumerator toggleGMod(bool shouldHide)
+    {
+        RectTransform rect = (RectTransform) GodModePanel.transform;
+        if (shouldHide)
+        {
+            // hide godmode text
+            while (GodModeText.text != "")
+            {
+                String curStr = GodModeText.text;
+                List<String> arr = curStr.Split(new char[] {}).ToList();
+                arr.RemoveAt(arr.Count - 1);
+                GodModeText.text = string.Join("", arr);
+                yield return new WaitForSeconds(0.01f);
+            }
+            // fade panel in
+            while ((rect.rect.width > 0))
+            {
+                rect.sizeDelta -= new Vector2(1000 * Time.deltaTime, 0);
+                yield return null;
+            }
+        }
+        else
+        {
+            // fade panel in
+            while ((rect.rect.width <= godmodePanelWidth))
+            {
+                rect.sizeDelta += new Vector2(1000 * Time.deltaTime, 0);
+                yield return null;
+            }
+            // show godmode text
+            foreach (char let in "Godmode")
+            {
+                GodModeText.text += let;
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+
+        yield return null;
     }
 }
     

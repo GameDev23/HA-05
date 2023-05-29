@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject DestroyAnimation;
     [SerializeField] private GameObject DestroyParticle;
     private Rigidbody2D rg;
-    private bool isGodmode = false;
-    private float toggleGodmodeCD = 1f;
-    private float elapsedTime = 0f;
+
+    private float toggleGodmodeCD = 0.7f;
+    private float godmodeElapsedTime = 1f;
     
     
     
@@ -48,20 +48,21 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Enable Debug Button 1"))
+        if (Input.GetButtonDown("Enable Debug Button 1") && godmodeElapsedTime >= toggleGodmodeCD)
         {
-            Debug.Log("Toggle Godmode: " + !isGodmode);
+            Debug.Log("Toggle Godmode: " + !Manager.Instance.isGodmode);
             //toggle godmode
-            isGodmode = !isGodmode;
-            if(isGodmode)
+            Manager.Instance.toggleGodmode();
+            if(Manager.Instance.isGodmode)
             {
                 AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.LetMeDoItForYou, 2f);
                 //TODO indicate godmode
             }
 
-            
+            godmodeElapsedTime = 0f;
         }
-        
+
+        godmodeElapsedTime += Time.deltaTime;
     }
     
     public void OnCollisionEnter2D(Collision2D other)
@@ -87,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void endGame()
     {
-        if (isGodmode)
+        if (Manager.Instance.isGodmode)
             return;  // dont do any damage calculations in godmode
         
         GameObject destroyAnimation = Instantiate(DestroyAnimation);

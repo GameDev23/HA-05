@@ -71,7 +71,7 @@ public class BossScript : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerProjectile"))
         {
             Debug.Log("Hit Trigger on Boss");
-            Manager.Instance.showDamageNumber(transform.position);
+            //Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
             if (Health <= 0)
             {
