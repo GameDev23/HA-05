@@ -22,6 +22,7 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI WaveTextMesh;
     public GameObject DamageNumberPrefab;
     public GameObject GodModePanel;
+    public GameObject audioManager;
     public TextMeshProUGUI GodModeText;
     public AudioClip BGMMenu;
     public AudioClip BGMGame;
@@ -118,7 +119,6 @@ public class Manager : MonoBehaviour
         rect.sizeDelta = new Vector2(-2000, -1000);
         
         //init sound
-        
         if (AudioManager.Instance.SourceBGM.clip != AudioManager.Instance.BGMGame)
             AudioManager.Instance.SourceBGM.clip = AudioManager.Instance.BGMGame;
         

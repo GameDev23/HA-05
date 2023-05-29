@@ -158,6 +158,8 @@ MonoBehaviour:
   timeHorizontal: 20
   timeSinus: 0
   timeCosinus: 0
+  radius: 3
+  speed: -5
 --- !u!50 &4479014918926838425
 Rigidbody2D:
   serializedVersion: 4

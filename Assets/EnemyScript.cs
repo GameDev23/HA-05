@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float nextProjectileDelay = 2f;
     [SerializeField] private float minDelay = 0.5f;
     [SerializeField] private float maxDelay = 5f;
+    [SerializeField] private bool isReflector = false;
     
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,14 @@ public class EnemyScript : MonoBehaviour
         {
             Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            if (other.gameObject.CompareTag("PlayerProjectile") && !gameObject.CompareTag("Enemy"))
+            {
+                if (other.gameObject.name.Contains("glowCircle"))
+                    return;
+                Debug.Log("Other: " + other.gameObject.tag + "  " + other.gameObject.name + " this: " + gameObject.tag+ "  " + gameObject.name);
+                GameObject reflectedProjectile = Instantiate(projectile);
+                reflectedProjectile.transform.position = other.transform.position;
+            }
 
         }
     }

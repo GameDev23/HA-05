@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement : MonoBehaviour
@@ -21,11 +22,19 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float timeHorizontal;
     [SerializeField] private float timeSinus;
     [SerializeField] private float timeCosinus;
+    [SerializeField] private bool DebugTest;
 
     private float elapsedTimeVertical = 0f;
     private float elapsedTimeHorizontal = 0f;
     private float elapsedTimeSinus = 0f;
     private float elapsedTimeCosinus = 0f;
+    
+    public float radius = 1f; 
+    public float speed = 2f; 
+    
+    private float angle;
+    private Vector3 center;
+    private Vector3 startPosition;
 
     private Rigidbody2D rg;
     
@@ -33,6 +42,13 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         rg = gameObject.GetComponent<Rigidbody2D>();
+        rg.velocity = CalculateVelocity(); // Anfangsgeschwindigkeit setzen
+        center = transform.position;
+        startPosition = transform.position;
+        if (DebugTest)
+        {
+            elapsedTimeVertical = timeVertical / 2;
+        }
     }
 
     private void FixedUpdate()
@@ -93,7 +109,16 @@ public class EnemyMovement : MonoBehaviour
         }
         if (Sinus)
         {
-            //Implement sinus movement here
+            // Den Winkel basierend auf der Zeit und Geschwindigkeit ändern
+            angle += speed * Time.deltaTime;
+
+            // Neue Position des Objekts berechnen
+            float x = Mathf.Cos(angle) * radius;
+            float y = Mathf.Sin(angle) * radius;
+            Vector3 newPosition = center + new Vector3(x, y, 0f);
+
+            // Die Richtung und Geschwindigkeit der Bewegung aktualisieren
+            v += (newPosition - transform.position) / Time.deltaTime;
         }
         if (Cosinus)
         {
@@ -101,5 +126,16 @@ public class EnemyMovement : MonoBehaviour
         }
 
         return v;
+    }
+    
+    private Vector2 CalculateVelocity()
+    {
+        // Startposition des Objekts berechnen
+        float x = Mathf.Cos(angle) * radius;
+        float y = Mathf.Sin(angle) * radius;
+        Vector3 startPos = center + new Vector3(x, y, 0f);
+
+        // Geschwindigkeit berechnen
+        return (startPos - transform.position) / Time.deltaTime;
     }
 }

@@ -40,6 +40,7 @@ public class BossScript : MonoBehaviour
         }
 
         LaserCount = Random.Range(minLaser, maxLaser + 1);
+        
     }
 
     // Update is called once per frame
@@ -73,6 +74,7 @@ public class BossScript : MonoBehaviour
             Debug.Log("Hit Trigger on Boss");
             //Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            Manager.Instance.showDamageNumber(transform.position);
             if (Health <= 0)
             {
                 Manager.Instance.PlayerScore += 1;
@@ -88,7 +90,7 @@ public class BossScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") || !other.gameObject.CompareTag("PlayerProjectile"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Hit Collider on Boss");
             Manager.Instance.showDamageNumber(transform.position);

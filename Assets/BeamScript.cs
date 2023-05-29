@@ -46,7 +46,7 @@ public class BeamScript : MonoBehaviour
             Destroy(gameObject);
         }else if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit Enemy");
+            Debug.Log("Hit Enemy " + other.gameObject.name);
             //Manager.Instance.showDamageNumber(transform.position);
             AudioManager.Instance.SourceSFX.PlayOneShot(HitSound, 0.6f);
             Destroy(gameObject);
