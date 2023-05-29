@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,16 +11,30 @@ public class ButtonHoldScript : MonoBehaviour
     [SerializeField] private float holdDuration = 1f;
 
     [SerializeField] private Image image;
+    [SerializeField] private SpriteRenderer GlowImage;
+    
     [SerializeField] private string name;
+    [SerializeField] private float fadeFactor = 1f;
+
 
     private bool isPressed = false;
-    private bool isStarted = false;
+    private static bool isStarted = false;
+    private bool isHover = false;
 
     private float pressedTime = 0f;
+    
+
+    private Color color;
+
+    private void Awake()
+    {
+        isStarted = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        color = GlowImage.color;
     }
 
     // Update is called once per frame
@@ -37,17 +52,45 @@ public class ButtonHoldScript : MonoBehaviour
             StartCoroutine(startGame());
         }
 
+        if (isHover)
+        {
+            color.a = color.a >= 1 ? 1 : color.a + Time.deltaTime * fadeFactor;
+            GlowImage.color = color;
+        }
+        else
+        {
+            color.a = color.a = color.a <= 0 ? 0 : color.a - Time.deltaTime * fadeFactor;
+            GlowImage.color = color;
+        }
+
     }
     
     public void OnPointerDown(BaseEventData eventData)
     {
+        if(isStarted)
+            return;
         isPressed = true;
         PlayerPrefs.SetString("Character", name);
     }
     
     public void OnPointerUp(BaseEventData eventData)
     {
+        if(isStarted)
+            return;
         isPressed = false;
+    }
+
+    public void OnPointerEnter(BaseEventData eventData)
+    {
+        if(isStarted)
+            return;
+        isHover = true;
+    }    
+    public void OnPointerExit(BaseEventData eventData)
+    {
+        if(isStarted)
+            return;
+        isHover = false;
     }
 
     IEnumerator startGame()
