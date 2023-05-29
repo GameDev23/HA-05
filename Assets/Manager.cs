@@ -124,10 +124,6 @@ public class Manager : MonoBehaviour
         TripleShotCooldown.fillAmount = cdSecondary;
         float cdDavid = toPercent(cooldownDavid, CooldownDavid);
         SnortCircleCooldown.fillAmount = cdDavid;
-
-        cooldownPrimary -= Time.deltaTime;
-        cooldownSecondary -= Time.deltaTime;
-        cooldownDavid -= Time.deltaTime;
         if(ShouldShowDialog && !showingDialog)
             startDialog();
     }

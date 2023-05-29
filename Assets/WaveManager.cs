@@ -83,6 +83,7 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
+            //TODO fix boss index because there is only one boss to spawn
             //should be a boss wave
             currentBossIndex++;
             if (isBossRandom)

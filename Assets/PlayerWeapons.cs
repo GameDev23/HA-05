@@ -13,15 +13,9 @@ public class PlayerWeapons : MonoBehaviour
 
     //  Samwel
     [SerializeField] private GameObject Lightning;
-
-    [SerializeField] public float CooldownPrimary = 0.5f;
-    [SerializeField] public float CooldownSecondary = 5f;
-    [SerializeField] public float CooldownDavid = 8f;
+    
     [SerializeField] public float CoolddownSamwel = 8f;
-
-    public float cooldownPrimary = 0f;
-    public float cooldownSecondary = 0f;
-    public float cooldownDavid = 0f;
+    
     public float cooldownSamwel= 0f;
     
     // Start is called before the first frame update
@@ -69,20 +63,20 @@ public class PlayerWeapons : MonoBehaviour
             Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
         }
 
-        if (Input.GetButton("Fire4") && cooldownDavid <= 0)
+        if (Input.GetButton("Fire4") && Manager.Instance.cooldownDavid <= 0)
         {
             GameObject lightning = Instantiate(Lightning);
         }
 
         //Adjust cooldowns
-        float cdSecondary = Manager.toPercent(cooldownSecondary, CooldownSecondary);
+        float cdSecondary = Manager.toPercent(Manager.Instance.cooldownSecondary, Manager.Instance.CooldownSecondary);
         Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
-        float cdDavid = Manager.toPercent(cooldownDavid, CooldownDavid);
+        float cdDavid = Manager.toPercent(Manager.Instance.cooldownDavid, Manager.Instance.CooldownDavid);
         Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
         
-        cooldownPrimary -= Time.deltaTime;
-        cooldownSecondary -= Time.deltaTime;
-        cooldownDavid -= Time.deltaTime;
+        Manager.Instance.cooldownPrimary -= Time.deltaTime;
+        Manager.Instance.cooldownSecondary -= Time.deltaTime;
+        Manager.Instance.cooldownDavid -= Time.deltaTime;
         
 
     }
