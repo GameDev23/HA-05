@@ -232,7 +232,6 @@ public class Manager : MonoBehaviour
                 break;
         }
         
-        Debug.Log("DIALOG: " + character + " and array of: " + charDialogs);
         
         // get random prompt and type it to panel
         if(charDialogs.Count > 0)
@@ -245,7 +244,6 @@ public class Manager : MonoBehaviour
                 //try to get voiceline which is not played before
                 for (int i = 0; i < 10; i++)
                 {
-                    Debug.Log("INSIDE OF RAND FUNCTION with parameters " + 0 + "  " + DialogClips.Count);
                     rand = UnityEngine.Random.Range(0, DialogClips.Count);
                     if (rand != lastIndex)
                     {
@@ -253,7 +251,6 @@ public class Manager : MonoBehaviour
                         break;
                     }
                 }
-                Debug.Log("Using Rand: " + rand);
                 AudioManager.Instance.SourceSFX.PlayOneShot(DialogClips[rand]);
             }
             // get random prompt
