@@ -21,7 +21,7 @@ public class SamwelBeam : MonoBehaviour
     void Start()
     {
         TimeElapsed = 0f;
-        GameObject parent = Instantiate(Parent);
+        //GameObject parent = Instantiate(Parent);
         Rigid = GetComponent<Rigidbody2D>();
         // To fly left
         Rigid.velocity = Vector3.left;

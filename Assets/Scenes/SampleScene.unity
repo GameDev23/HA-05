@@ -2130,8 +2130,52 @@ PrefabInstance:
       value: SamwelWaveBoss
       objectReference: {fileID: 0}
     - target: {fileID: 6048022350318985991, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048022350318985991, guid: fd827addc40d348eea952e79ba62759e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048022350318985991, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254152514582557, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254152622077073, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254152644054070, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254152874965814, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254152974070891, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254153034382001, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254153522157880, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254153735742821, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304254153829050831, guid: fd827addc40d348eea952e79ba62759e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd827addc40d348eea952e79ba62759e, type: 3}

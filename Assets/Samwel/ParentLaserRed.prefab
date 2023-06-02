@@ -152,5 +152,5 @@ MonoBehaviour:
   TimeToSplit: 3
   xSpeed: 10
   ySpeed: 0
-  ShootSound: {fileID: 0}
-  HitSound: {fileID: 0}
+  ShootSound: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
+  HitSound: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
