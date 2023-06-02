@@ -2135,7 +2135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6048022350318985991, guid: fd827addc40d348eea952e79ba62759e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6048022350318985991, guid: fd827addc40d348eea952e79ba62759e, type: 3}
       propertyPath: m_TagString
@@ -2411,7 +2411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1734371315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   - {fileID: 6048022350318985991, guid: fd827addc40d348eea952e79ba62759e, type: 3}
   waveNumber: 0
   currentIndex: -1
-  currentBossIndex: 0
+  currentBossIndex: -1
   isWave: 0
   currentWave: {fileID: 0}
   enemyCount: 0
