@@ -6,7 +6,7 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
-public class MarvinEnemyMovement : MonoBehaviour
+public class MarvinMovementus : MonoBehaviour
 {
     [SerializeField] private bool Vertical = false;
     [SerializeField] private bool Horizontal = false;
@@ -109,7 +109,7 @@ public class MarvinEnemyMovement : MonoBehaviour
         }
         if (Sinus)
         {
-            // Den Winkel basierend auf der Zeit und Geschwindigkeit Ã¤ndern
+            // Den Winkel basierend auf der Zeit und Geschwindigkeit ändern
             angle += speed * Time.deltaTime;
 
             // Neue Position des Objekts berechnen
