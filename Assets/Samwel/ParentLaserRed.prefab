@@ -147,5 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isParent: 1
+  Parent: {fileID: 2570172656894175523}
   Children: {fileID: 2570172656894175523, guid: 12adab8aad2fb18478029b7046ca361b, type: 3}
   TimeToSplit: 3
+  xSpeed: 10
+  ySpeed: 0
+  ShootSound: {fileID: 0}
+  HitSound: {fileID: 0}

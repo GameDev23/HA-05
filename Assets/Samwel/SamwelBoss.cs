@@ -39,6 +39,7 @@ public class SamwelBoss : MonoBehaviour
             CurrentDelay = Random.Range(MinDelay, MaxDelay);
             ElapsedTime = 0;
             GameObject projectile = Instantiate(Projectile);
+            Debug.Log("BOSS SHOOTING");
             projectile.transform.position = transform.position + (Vector3.left * 0.5f); // Change this if it isn't placed in the correct position
         }
 
