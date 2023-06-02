@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1411440168, guid: 58a75a626e0995d42aebc25824a4948e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07d119565fdaa9040bfb1a1cc3aaca89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.63, y: 0.93}
+    oldSize: {x: 0.09, y: 0.37}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   ySpeed: 0
   ShootSound: {fileID: 8300000, guid: 941ed2a29f1e7524ca6a8400720b9e8a, type: 3}
   HitSound: {fileID: 8300000, guid: df32504aba2a1f747a27967919e5aa73, type: 3}
+  isPlayerProjectile: 1
 --- !u!50 &8351572880160992125
 Rigidbody2D:
   serializedVersion: 4

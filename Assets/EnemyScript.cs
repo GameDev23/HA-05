@@ -11,12 +11,14 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject DestroyAnimation;
+    [SerializeField] private GameObject DestroyParticle;
 
     [SerializeField] private float DestroyAnimationScaling = 1f;
 
     [SerializeField] private float nextProjectileDelay = 2f;
     [SerializeField] private float minDelay = 0.5f;
     [SerializeField] private float maxDelay = 5f;
+    [SerializeField] private bool isReflector = false;
     
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,12 @@ public class EnemyScript : MonoBehaviour
             GameObject explosion = Instantiate(DestroyAnimation);
             explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
             explosion.transform.position = transform.position;
+            
+            GameObject particle = Instantiate(DestroyParticle);
+            particle.transform.position = transform.position;
             Destroy(gameObject);
+            //Show dialog
+            Manager.Instance.ShouldShowDialog = true;
         }
 
         if (nextProjectileDelay <= 0)
@@ -59,14 +66,26 @@ public class EnemyScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerProjectile") || other.gameObject.CompareTag("Player"))
         {
+            Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            if (other.gameObject.CompareTag("PlayerProjectile") && !gameObject.CompareTag("Enemy"))
+            {
+                if (other.gameObject.name.Contains("glowCircle"))
+                    return;
+                Debug.Log("Other: " + other.gameObject.tag + "  " + other.gameObject.name + " this: " + gameObject.tag+ "  " + gameObject.name);
+                GameObject reflectedProjectile = Instantiate(projectile);
+                reflectedProjectile.transform.position = other.transform.position;
+            }
+
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+
         }
     }
 }

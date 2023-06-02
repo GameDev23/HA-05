@@ -10,11 +10,19 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource SourceBGM;
     public AudioSource SourceSFX;
-    public AudioMixer mixer;
+    public AudioSource SourceSFXEcho;
+    public AudioMixer Mixer;
     
-    public AudioClip CorneriaTheme;
+    public AudioClip BGMMenu;
+    public AudioClip BGMGame;
     public AudioClip BossBeam;
+    public AudioClip GodModeMusic;
     public AudioClip Snort;
+    public AudioClip LetMeDoItForYou;
+    public AudioClip Quaso;
+    public List<AudioClip> DavidDialog;
+    public List<AudioClip> MarvinDialog;
+    public List<AudioClip> SamwelDialog;
     public AudioClip Zap;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
@@ -32,14 +40,11 @@ public class AudioManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
 
-        SourceBGM.clip = CorneriaTheme;
-        SourceBGM.Play();
-        SourceBGM.volume = 0.5f;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        //SourceBGM.clip = CorneriaTheme;
+        //SourceBGM.Play();
+        AudioManager.Instance.SourceBGM.clip = BGMMenu;
+        AudioManager.Instance.SourceBGM.volume = 0.4f;
+        AudioManager.Instance.SourceBGM.Play();
         
     }
 

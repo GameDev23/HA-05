@@ -11,6 +11,7 @@ public class BossScript : MonoBehaviour
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject DestroyAnimation;
+    [SerializeField] private GameObject DestroyParticle;
     [SerializeField] private GameObject LaserBuilder;
 
     [SerializeField] private float DestroyAnimationScaling = 1f;
@@ -39,6 +40,7 @@ public class BossScript : MonoBehaviour
         }
 
         LaserCount = Random.Range(minLaser, maxLaser + 1);
+        
     }
 
     // Update is called once per frame
@@ -46,12 +48,8 @@ public class BossScript : MonoBehaviour
     {
         if (Health <= 0)
         {
-            //Do explosion
-
-            Manager.Instance.PlayerScore += 1;
-            GameObject explosion = Instantiate(DestroyAnimation);
-            explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
-            explosion.transform.position = transform.position;
+            //Show dialog
+            //Manager.Instance.ShouldShowDialog = true;
             Destroy(gameObject);
         }
 
@@ -71,16 +69,42 @@ public class BossScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerProjectile") || other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("PlayerProjectile"))
         {
+            Debug.Log("Hit Trigger on Boss");
+            //Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            Manager.Instance.showDamageNumber(transform.position);
+            if (Health <= 0)
+            {
+                Manager.Instance.PlayerScore += 1;
+                GameObject explosion = Instantiate(DestroyAnimation);
+                explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
+                explosion.transform.position = transform.position;
+                GameObject particle = Instantiate(DestroyParticle);
+                particle.transform.position = transform.position;
+                particle.transform.localScale *= 3;
+
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Hit Collider on Boss");
+            Manager.Instance.showDamageNumber(transform.position);
             Health -= 1;
+            if (Health <= 0)
+            {
+                Manager.Instance.PlayerScore += 1;
+                GameObject explosion = Instantiate(DestroyAnimation);
+                explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
+                explosion.transform.position = transform.position;
+                GameObject particle = Instantiate(DestroyParticle);
+                particle.transform.position = transform.position;
+                particle.transform.localScale *= 3;
+            }
         }
     }
 
@@ -105,5 +129,7 @@ public class BossScript : MonoBehaviour
 
         isLaser = false;
     }
+    
+
 }
    

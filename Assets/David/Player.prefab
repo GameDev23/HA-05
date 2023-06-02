@@ -49,7 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   Speed: 5
-  DestroyAnimation: {fileID: 0}
+  DestroyAnimation: {fileID: 6469208720404049894, guid: 03edc74619dd6e54e8ebce847ae66a44, type: 3}
+  DestroyParticle: {fileID: 6202609200145119709, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
 --- !u!61 &5638306657401599875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -89,10 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Beam: {fileID: 2205609354309998046, guid: 9e08735602938c840acd763ea084b9cc, type: 3}
-  CooldownPrimary: 0.3
-  CooldownSecondary: 2.5
-  cooldownPrimary: 0
-  cooldownSecondary: 0
+  SnortCircle: {fileID: 248827587162182970, guid: 94c7c17a570c462419e8b4c3555d890e, type: 3}
 --- !u!212 &5638306657401599872
 SpriteRenderer:
   m_ObjectHideFlags: 0
