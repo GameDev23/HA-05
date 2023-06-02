@@ -81,6 +81,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3defa36c103e70d4485a7b66d4e32379, type: 3}
   - {fileID: 8300000, guid: d768f17ee1c66a04eac161a68a0098d2, type: 3}
   Zap: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
+  explosion: {fileID: 8300000, guid: dac4d5de3f0bb44a19926f8684e4a693, type: 3}
 --- !u!82 &3140882107613154496
 AudioSource:
   m_ObjectHideFlags: 0

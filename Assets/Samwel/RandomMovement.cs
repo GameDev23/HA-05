@@ -17,6 +17,10 @@ public class RandomMovement : MonoBehaviour
 
     private void Start()
     {
+        if (Cam == null)
+        {
+            Cam = GetComponent<Camera>();
+        }
         // Generate initial random direction
         GenerateRandomDirection();
         Middle = Cam.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));

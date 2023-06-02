@@ -6,8 +6,13 @@ using UnityEngine;
 public class SamwelBeam : MonoBehaviour
 {
     [SerializeField] bool isParent = false;
+    [SerializeField] GameObject Parent;
     [SerializeField] GameObject Children;
     [SerializeField] float TimeToSplit = 1f;
+    [SerializeField] private float xSpeed = 10f;
+    [SerializeField] private float ySpeed;
+    [SerializeField] AudioClip ShootSound;
+    [SerializeField] AudioClip HitSound;
     private float TimeElapsed = 0f;
     private Rigidbody2D Rigid;
     private bool hasSplit = false;
@@ -16,6 +21,7 @@ public class SamwelBeam : MonoBehaviour
     void Start()
     {
         TimeElapsed = 0f;
+        //GameObject parent = Instantiate(Parent);
         Rigid = GetComponent<Rigidbody2D>();
         // To fly left
         Rigid.velocity = Vector3.left;

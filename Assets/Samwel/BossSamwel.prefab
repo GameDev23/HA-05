@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  Rigidbody: {fileID: 0}
+  Rigidbody: {fileID: 5438818872064002021}
   Cam: {fileID: 0}
 --- !u!50 &5438818872064002021
 Rigidbody2D:
@@ -325,12 +325,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &831515232858890417
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -369,13 +369,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f40a3ff50a876428b56dada9151c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoint: 0
+  HealthPoint: 10
   Projectile: {fileID: 2570172656894175523, guid: 26b3e0c9c6e8e22479b6b1aa168da2d1, type: 3}
   DestroyAnimation: {fileID: 6469208720404049894, guid: 9331002f423db448486448127d62f363, type: 3}
   DestroyParticle: {fileID: 0}
   DestroyAnimationScaling: 0
-  MinDelay: 0
-  MaxDelay: 0
+  MinDelay: 2
+  MaxDelay: 5
 --- !u!1 &6951324720006290160
 GameObject:
   m_ObjectHideFlags: 0
