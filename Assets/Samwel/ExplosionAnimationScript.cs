@@ -10,6 +10,7 @@ public class ExplosionAnimationScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.explosion, 2f);
     }
 
     // Update is called once per frame
@@ -17,6 +18,7 @@ public class ExplosionAnimationScript : MonoBehaviour
     {
         if (ElapsedTimeToDestroy <= 0f)
         {
+            AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.explosion, 2f);
             Debug.Log("DESTROY ANIMATION IS TRIGGERED");
             Destroy(gameObject);
         }

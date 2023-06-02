@@ -51,6 +51,7 @@ public class SamwelBoss : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerProjectile") || other.gameObject.CompareTag("Player"))
         {
             HealthPoint -= 1;
+            Manager.Instance.showDamageNumber(transform.position);
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -58,6 +59,7 @@ public class SamwelBoss : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             HealthPoint -= 1;
+            Manager.Instance.showDamageNumber(transform.position);
         }
     }
 }
