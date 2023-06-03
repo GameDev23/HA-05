@@ -18,7 +18,7 @@ public class ExplosionAnimationScript : MonoBehaviour
     {
         if (ElapsedTimeToDestroy <= 0f)
         {
-            AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.explosion, 2f);
+            //AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.explosion, 2f);
             Debug.Log("DESTROY ANIMATION IS TRIGGERED");
             Destroy(gameObject);
         }

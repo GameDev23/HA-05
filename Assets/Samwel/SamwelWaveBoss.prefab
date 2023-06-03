@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossSamwel
       objectReference: {fileID: 0}
+    - target: {fileID: 6951324719949026346, guid: ad2fe3a64de9a0b43909bb3ef4afcd22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6951324719949026347, guid: ad2fe3a64de9a0b43909bb3ef4afcd22, type: 3}
       propertyPath: m_RootOrder
       value: 0
