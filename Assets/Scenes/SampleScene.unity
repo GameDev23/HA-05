@@ -1507,6 +1507,7 @@ MonoBehaviour:
   PlayerScore: 0
   TripleShotCooldown: {fileID: 1611347006}
   SnortCircleCooldown: {fileID: 243443979}
+  LighningCoolDown: {fileID: 0}
   Player: {fileID: 1874763721}
   WavePanel: {fileID: 712488101}
   WaveTextMesh: {fileID: 630188947}
@@ -1567,6 +1568,7 @@ MonoBehaviour:
   cooldownPrimary: 0
   cooldownSecondary: 0
   cooldownDavid: 0
+  cooldwnSamwel: 0
   ShouldShowDialog: 0
   isGodmode: 0
   isMenu: 0
@@ -2009,6 +2011,7 @@ GameObject:
   - component: {fileID: 1437193377}
   - component: {fileID: 1437193379}
   - component: {fileID: 1437193378}
+  - component: {fileID: 1437193380}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -2074,6 +2077,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437193376}
   m_CullTransparentMesh: 1
+--- !u!95 &1437193380
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437193376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0c6165fe2dc48346af7525989d6e4a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1478642563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,6 +2547,10 @@ PrefabInstance:
       propertyPath: Lighning
       value: 
       objectReference: {fileID: 4235304984009717326, guid: 0b2720b5878c01b479b2a74277a0aa36, type: 3}
+    - target: {fileID: 5638306657401599874, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
+      propertyPath: Lightning
+      value: 
+      objectReference: {fileID: 8942579398427823257, guid: cc034690f87a21d47ad22edddb62e9d4, type: 3}
     - target: {fileID: 5638306657401599874, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
       propertyPath: SnortCircle
       value: 

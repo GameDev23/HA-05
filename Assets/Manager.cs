@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class Manager : MonoBehaviour
     public int PlayerScore = 0;
     public Image TripleShotCooldown;
     public Image SnortCircleCooldown;
+    public Image LighningCoolDown;
     public GameObject Player;
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
@@ -52,6 +54,7 @@ public class Manager : MonoBehaviour
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
     public float cooldownDavid = 0f;
+    public float cooldwnSamwel = 0f;
 
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
@@ -135,6 +138,7 @@ public class Manager : MonoBehaviour
         TripleShotCooldown.fillAmount = cdSecondary;
         float cdDavid = toPercent(cooldownDavid, CooldownDavid);
         SnortCircleCooldown.fillAmount = cdDavid;
+        float cdSamwel = toPercent(cooldwnSamwel, cooldwnSamwel);
         if(ShouldShowDialog && !showingDialog)
             startDialog();
     }
