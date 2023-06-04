@@ -50,11 +50,12 @@ public class Manager : MonoBehaviour
     public float CooldownPrimary = 0.5f;
     public float CooldownSecondary = 5f;
     public float CooldownDavid = 8f;
+    public float CooldownSamwel = 8f;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
     public float cooldownDavid = 0f;
-    public float cooldwnSamwel = 0f;
+    public float cooldownSamwel = 0f;
 
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
@@ -138,7 +139,8 @@ public class Manager : MonoBehaviour
         TripleShotCooldown.fillAmount = cdSecondary;
         float cdDavid = toPercent(cooldownDavid, CooldownDavid);
         SnortCircleCooldown.fillAmount = cdDavid;
-        float cdSamwel = toPercent(cooldwnSamwel, cooldwnSamwel);
+        float cdSamwel = toPercent(cooldownSamwel, CooldownSamwel);
+        LighningCoolDown.fillAmount = cdSamwel;
         if(ShouldShowDialog && !showingDialog)
             startDialog();
     }

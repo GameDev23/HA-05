@@ -63,9 +63,11 @@ public class PlayerWeapons : MonoBehaviour
             Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
         }
 
-        if (Input.GetButton("Fire4") && Manager.Instance.cooldownDavid <= 0)
+        if (Input.GetButton("Fire4") && Manager.Instance.cooldownSamwel <= 0)
         {
-            GameObject lightning = Instantiate(Lightning);
+            //GameObject lightning = Instantiate(Lightning);
+            StartCoroutine(shockSamwel());
+            Manager.Instance.cooldownSamwel = Manager.Instance.CooldownSamwel;
         }
 
         //Adjust cooldowns
@@ -77,8 +79,19 @@ public class PlayerWeapons : MonoBehaviour
         Manager.Instance.cooldownPrimary -= Time.deltaTime;
         Manager.Instance.cooldownSecondary -= Time.deltaTime;
         Manager.Instance.cooldownDavid -= Time.deltaTime;
-        
+        Manager.Instance.cooldownSamwel -= Time.deltaTime;
 
+
+    }
+
+    IEnumerator shockSamwel()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject lightning = Instantiate(Lightning);
+            yield return new WaitForSeconds(1f);
+        }
+        yield return null;
     }
 
 
