@@ -325,6 +325,12 @@ public class Manager : MonoBehaviour
 
         yield return null;
     }
+
+    public void ModifyCooldowns(float cooldownMultiplier)
+    {
+        CooldownDavid *= cooldownMultiplier;
+        //TODO add marvin and samwels attack cooldowns
+    }
 }
     
 

@@ -34,7 +34,8 @@ public class PlayerWeapons : MonoBehaviour
                 //Shoot beam
                 GameObject beam = Instantiate(Beam);
                 beam.gameObject.transform.position = transform.position + 1f * Vector3.right;
-                Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary;
+                beam.gameObject.transform.localScale += new Vector3(1, 0.3f, 0) * UpgradeManager.Instance.ProjectileSize;
+                Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary * (1f / UpgradeManager.Instance.PrimaryFireMultiplier);
             }
 
             if (Input.GetButton("Fire2") && Manager.Instance.cooldownSecondary <= 0)
