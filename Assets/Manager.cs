@@ -56,6 +56,7 @@ public class Manager : MonoBehaviour
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
     public bool isMenu = true;
+    public bool isPause = false;
     private bool showingDialog = false;
     private int lastIndex = 0;
     
@@ -129,14 +130,16 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //Adjust cooldowns
-        float cdSecondary = toPercent(cooldownSecondary, CooldownSecondary);
-        TripleShotCooldown.fillAmount = cdSecondary;
-        float cdDavid = toPercent(cooldownDavid, CooldownDavid);
-        SnortCircleCooldown.fillAmount = cdDavid;
-        if(ShouldShowDialog && !showingDialog)
-            startDialog();
+        if(!Manager.Instance.isPause)
+        {
+            //Adjust cooldowns
+            float cdSecondary = toPercent(cooldownSecondary, CooldownSecondary);
+            TripleShotCooldown.fillAmount = cdSecondary;
+            float cdDavid = toPercent(cooldownDavid, CooldownDavid);
+            SnortCircleCooldown.fillAmount = cdDavid;
+            if(ShouldShowDialog && !showingDialog)
+                startDialog();
+        }
     }
 
     public static float toPercent(float a, float b)

@@ -47,22 +47,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetButtonDown("Enable Debug Button 1") && godmodeElapsedTime >= toggleGodmodeCD)
         {
-            Debug.Log("Toggle Godmode: " + !Manager.Instance.isGodmode);
-            //toggle godmode
-            Manager.Instance.toggleGodmode();
-            if(Manager.Instance.isGodmode)
-            {
-                AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.LetMeDoItForYou, 2f);
-                //TODO indicate godmode
-            }
+            if(!Manager.Instance.isPause)
+                if (Input.GetButtonDown("Enable Debug Button 1") && godmodeElapsedTime >= toggleGodmodeCD)
+                {
+                    Debug.Log("Toggle Godmode: " + !Manager.Instance.isGodmode);
+                    //toggle godmode
+                    Manager.Instance.toggleGodmode();
+                    if(Manager.Instance.isGodmode)
+                    {
+                        AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.LetMeDoItForYou, 2f);
+                        //TODO indicate godmode
+                    }
 
-            godmodeElapsedTime = 0f;
+                    godmodeElapsedTime = 0f;
+                }
+
+            godmodeElapsedTime += Time.deltaTime;
         }
-
-        godmodeElapsedTime += Time.deltaTime;
     }
     
     public void OnCollisionEnter2D(Collision2D other)

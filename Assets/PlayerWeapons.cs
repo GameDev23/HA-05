@@ -27,56 +27,59 @@ public class PlayerWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Manager.Instance.cooldownPrimary <= 0)
+        if(!Manager.Instance.isPause)
         {
-            //Shoot beam
-            GameObject beam = Instantiate(Beam);
-            beam.gameObject.transform.position = transform.position + 1f * Vector3.right;
-            Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary;
-        }
+            if (Input.GetButton("Fire1") && Manager.Instance.cooldownPrimary <= 0)
+            {
+                //Shoot beam
+                GameObject beam = Instantiate(Beam);
+                beam.gameObject.transform.position = transform.position + 1f * Vector3.right;
+                Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary;
+            }
 
-        if (Input.GetButton("Fire2") && Manager.Instance.cooldownSecondary <= 0)
-        {
-            //Shoot triple beam
-            GameObject beam1 = Instantiate(Beam);
-            GameObject beam2 = Instantiate(Beam);
-            GameObject beam3 = Instantiate(Beam);
+            if (Input.GetButton("Fire2") && Manager.Instance.cooldownSecondary <= 0)
+            {
+                //Shoot triple beam
+                GameObject beam1 = Instantiate(Beam);
+                GameObject beam2 = Instantiate(Beam);
+                GameObject beam3 = Instantiate(Beam);
 
-            Vector3 pos = transform.position;
-            beam1.transform.localScale += new Vector3(1, 1, 1);
-            beam1.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.up;
+                Vector3 pos = transform.position;
+                beam1.transform.localScale += new Vector3(1, 1, 1);
+                beam1.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.up;
 
-            beam2.transform.position = pos + 1f * Vector3.right;
-            beam2.transform.localScale += new Vector3(1, 1, 1);
+                beam2.transform.position = pos + 1f * Vector3.right;
+                beam2.transform.localScale += new Vector3(1, 1, 1);
 
-            beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
-            beam3.transform.localScale += new Vector3(1, 1, 1);
+                beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
+                beam3.transform.localScale += new Vector3(1, 1, 1);
 
-            Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
+                Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
 
-        }
+            }
 
-        if (Input.GetButton("Fire3") && Manager.Instance.cooldownDavid <= 0)
-        {
-            GameObject circle = Instantiate(SnortCircle);
-            circle.transform.position = transform.position;
-            Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
-        }
+            if (Input.GetButton("Fire3") && Manager.Instance.cooldownDavid <= 0)
+            {
+                GameObject circle = Instantiate(SnortCircle);
+                circle.transform.position = transform.position;
+                Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
+            }
 
-        if (Input.GetButton("Fire4") && Manager.Instance.cooldownDavid <= 0)
-        {
-            GameObject lightning = Instantiate(Lightning);
-        }
+            if (Input.GetButton("Fire4") && Manager.Instance.cooldownDavid <= 0)
+            {
+                GameObject lightning = Instantiate(Lightning);
+            }
 
-        //Adjust cooldowns
-        float cdSecondary = Manager.toPercent(Manager.Instance.cooldownSecondary, Manager.Instance.CooldownSecondary);
-        Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
-        float cdDavid = Manager.toPercent(Manager.Instance.cooldownDavid, Manager.Instance.CooldownDavid);
-        Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
+            //Adjust cooldowns
+            float cdSecondary = Manager.toPercent(Manager.Instance.cooldownSecondary, Manager.Instance.CooldownSecondary);
+            Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
+            float cdDavid = Manager.toPercent(Manager.Instance.cooldownDavid, Manager.Instance.CooldownDavid);
+            Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
         
-        Manager.Instance.cooldownPrimary -= Time.deltaTime;
-        Manager.Instance.cooldownSecondary -= Time.deltaTime;
-        Manager.Instance.cooldownDavid -= Time.deltaTime;
+            Manager.Instance.cooldownPrimary -= Time.deltaTime;
+            Manager.Instance.cooldownSecondary -= Time.deltaTime;
+            Manager.Instance.cooldownDavid -= Time.deltaTime;
+        }
         
 
     }
