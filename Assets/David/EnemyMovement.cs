@@ -6,7 +6,7 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
-public class MarvinEnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private bool Vertical = false;
     [SerializeField] private bool Horizontal = false;
