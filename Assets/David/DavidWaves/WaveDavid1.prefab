@@ -101,6 +101,10 @@ PrefabInstance:
       value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: Health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 3792844176335231688, guid: cd730b6f0d38b8e409d53bce9e63fbdd, type: 3}
@@ -201,6 +205,10 @@ PrefabInstance:
     - target: {fileID: 2697474127469836295, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: Health
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: projectile
