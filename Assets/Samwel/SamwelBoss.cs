@@ -24,8 +24,13 @@ public class SamwelBoss : MonoBehaviour
     void Update()
     {
         if (HealthPoint <= 0)
-        { 
+        {
             //  Destroy and Show Damage
+            Debug.Log("WTEST BOSS DRSTRO");
+            GameObject explosion = Instantiate(DestroyAnimation);
+            explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
+            explosion.transform.position = transform.position;
+            Destroy(gameObject);
         }
 
         if (ElapsedTime >= CurrentDelay)
@@ -34,9 +39,28 @@ public class SamwelBoss : MonoBehaviour
             CurrentDelay = Random.Range(MinDelay, MaxDelay);
             ElapsedTime = 0;
             GameObject projectile = Instantiate(Projectile);
-            projectile.transform.position = transform.position + (Vector3.left * 0.5f); // Chang this if it isn't placeed in the correct position
+            Debug.Log("BOSS SHOOTING");
+            projectile.transform.position = transform.position + (Vector3.left * 0.5f); // Change this if it isn't placed in the correct position
         }
 
         ElapsedTime += Time.deltaTime;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerProjectile") || other.gameObject.CompareTag("Player"))
+        {
+            HealthPoint -= 1;
+            Manager.Instance.showDamageNumber(transform.position);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            HealthPoint -= 1;
+            Manager.Instance.showDamageNumber(transform.position);
+        }
     }
 }

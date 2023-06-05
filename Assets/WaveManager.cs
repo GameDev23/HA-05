@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> bossWaveList = new List<GameObject>();
     public int waveNumber = 0;
     public int currentIndex = -1;
-    public int currentBossIndex = 0;
+    public int currentBossIndex = -1;
     public bool isWave = false;
     public GameObject currentWave;
     public int enemyCount = 0;
@@ -85,7 +85,6 @@ public class WaveManager : MonoBehaviour
         {
             //TODO fix boss index because there is only one boss to spawn
             //should be a boss wave
-            currentBossIndex++;
             if (isBossRandom)
             {
                 //cycled through each wave so now they will become random
