@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class Manager : MonoBehaviour
     public int PlayerScore = 0;
     public Image TripleShotCooldown;
     public Image SnortCircleCooldown;
+    public Image LighningCoolDown;
     public GameObject Player;
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
@@ -48,14 +50,17 @@ public class Manager : MonoBehaviour
     public float CooldownPrimary = 0.5f;
     public float CooldownSecondary = 5f;
     public float CooldownDavid = 8f;
+    public float CooldownSamwel = 8f;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
     public float cooldownDavid = 0f;
+    public float cooldownSamwel = 0f;
 
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
     public bool isMenu = true;
+    public bool isPause = false;
     private bool showingDialog = false;
     private int lastIndex = 0;
     
@@ -135,6 +140,8 @@ public class Manager : MonoBehaviour
         TripleShotCooldown.fillAmount = cdSecondary;
         float cdDavid = toPercent(cooldownDavid, CooldownDavid);
         SnortCircleCooldown.fillAmount = cdDavid;
+        float cdSamwel = toPercent(cooldownSamwel, CooldownSamwel);
+        LighningCoolDown.fillAmount = cdSamwel;
         if(ShouldShowDialog && !showingDialog)
             startDialog();
     }
@@ -321,6 +328,13 @@ public class Manager : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void ModifyCooldowns(float cooldownMultiplier)
+    {
+        CooldownDavid *= cooldownMultiplier;
+        CooldownSamwel *= cooldownMultiplier;
+        //TODO add marvin and samwels attack cooldowns
     }
 }
     

@@ -82,6 +82,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d768f17ee1c66a04eac161a68a0098d2, type: 3}
   Zap: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
   explosion: {fileID: 8300000, guid: dac4d5de3f0bb44a19926f8684e4a693, type: 3}
+  Applause: {fileID: 8300000, guid: 4f0736af67209194cacf1c5f93dd3be0, type: 3}
+  Reflector: {fileID: 8300000, guid: cb84e50a26560214abbd875d0215b7bf, type: 3}
 --- !u!82 &3140882107613154496
 AudioSource:
   m_ObjectHideFlags: 0

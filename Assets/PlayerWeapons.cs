@@ -27,32 +27,40 @@ public class PlayerWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Manager.Instance.cooldownPrimary <= 0)
+        if(!Manager.Instance.isPause)
         {
-            //Shoot beam
-            GameObject beam = Instantiate(Beam);
-            beam.gameObject.transform.position = transform.position + 1f * Vector3.right;
-            Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary;
-        }
+            if (Input.GetButton("Fire1") && Manager.Instance.cooldownPrimary <= 0)
+            {
+                //Shoot beam
+                GameObject beam = Instantiate(Beam);
+                beam.gameObject.transform.position = transform.position + 1f * Vector3.right;
+                //increase beam size corresponding to upgraded size
+                if(UpgradeManager.Instance.ProjectileSize > 1)
+                    beam.gameObject.transform.localScale += new Vector3(1, 0.3f, 0) * UpgradeManager.Instance.ProjectileSize;
+                Manager.Instance.cooldownPrimary = Manager.Instance.CooldownPrimary * (1f / UpgradeManager.Instance.PrimaryFireMultiplier);
+            }
 
-        if (Input.GetButton("Fire2") && Manager.Instance.cooldownSecondary <= 0)
-        {
-            //Shoot triple beam
-            GameObject beam1 = Instantiate(Beam);
-            GameObject beam2 = Instantiate(Beam);
-            GameObject beam3 = Instantiate(Beam);
+            if (Input.GetButton("Fire2") && Manager.Instance.cooldownSecondary <= 0)
+            {
+                //Shoot triple beam
+                GameObject beam1 = Instantiate(Beam);
+                GameObject beam2 = Instantiate(Beam);
+                GameObject beam3 = Instantiate(Beam);
 
-            Vector3 pos = transform.position;
-            beam1.transform.localScale += new Vector3(1, 1, 1);
-            beam1.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.up;
+                Vector3 pos = transform.position;
+                beam1.transform.localScale += new Vector3(1, 1, 1);
+                beam1.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.up;
 
-            beam2.transform.position = pos + 1f * Vector3.right;
-            beam2.transform.localScale += new Vector3(1, 1, 1);
+                beam2.transform.position = pos + 1f * Vector3.right;
+                beam2.transform.localScale += new Vector3(1, 1, 1);
 
-            beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
-            beam3.transform.localScale += new Vector3(1, 1, 1);
+                beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
+                beam3.transform.localScale += new Vector3(1, 1, 1);
+                Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
+                
+            }
 
-            Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
+            
 
         }
 
@@ -63,9 +71,11 @@ public class PlayerWeapons : MonoBehaviour
             Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
         }
 
-        if (Input.GetButton("Fire4") && Manager.Instance.cooldownDavid <= 0)
+        if (Input.GetButton("Fire4") && Manager.Instance.cooldownSamwel <= 0)
         {
-            GameObject lightning = Instantiate(Lightning);
+            //GameObject lightning = Instantiate(Lightning);
+            StartCoroutine(shockSamwel());
+            Manager.Instance.cooldownSamwel = Manager.Instance.CooldownSamwel;
         }
 
         //Adjust cooldowns
@@ -77,8 +87,19 @@ public class PlayerWeapons : MonoBehaviour
         Manager.Instance.cooldownPrimary -= Time.deltaTime;
         Manager.Instance.cooldownSecondary -= Time.deltaTime;
         Manager.Instance.cooldownDavid -= Time.deltaTime;
-        
+        Manager.Instance.cooldownSamwel -= Time.deltaTime;
 
+
+    }
+
+    IEnumerator shockSamwel()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject lightning = Instantiate(Lightning);
+            yield return new WaitForSeconds(1f);
+        }
+        yield return null;
     }
 
 

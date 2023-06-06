@@ -102,6 +102,10 @@ PrefabInstance:
       value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: Health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: maxDelay
       value: 4
       objectReference: {fileID: 0}
@@ -191,6 +195,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5e09911571f39194bbd551c9a0991744, type: 3}
+    - target: {fileID: 2697474127469836294, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3504361
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836294, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: m_Color.g
+      value: 0.72616667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836294, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: m_Color.r
+      value: 0.990566
+      objectReference: {fileID: 0}
     - target: {fileID: 2697474127469836295, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.91
@@ -198,6 +214,10 @@ PrefabInstance:
     - target: {fileID: 2697474127469836295, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: Health
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: maxDelay
@@ -300,6 +320,10 @@ PrefabInstance:
     - target: {fileID: 2697474127469836295, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
+      propertyPath: Health
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2697474127469836312, guid: 417aa52901045c946a727cb21e9c1b43, type: 3}
       propertyPath: maxDelay

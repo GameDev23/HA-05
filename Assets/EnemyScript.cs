@@ -69,10 +69,11 @@ public class EnemyScript : MonoBehaviour
             Health -= 1;
             if (other.gameObject.CompareTag("PlayerProjectile") && !gameObject.CompareTag("Enemy") && isReflector)
             {
-                if (other.gameObject.name.Contains("glowCircle"))
+                if (other.gameObject.name.Contains("glowCircle") || other.gameObject.name.Contains("Lightning"))
                     return;
                 Debug.Log("Other: " + other.gameObject.tag + "  " + other.gameObject.name + " this: " + gameObject.tag+ "  " + gameObject.name);
                 GameObject reflectedProjectile = Instantiate(projectile);
+                AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.Reflector, 3f);
                 reflectedProjectile.transform.position = other.transform.position;
                 return;
             }

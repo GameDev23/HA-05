@@ -16,7 +16,7 @@ public class SnortScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.Instance.SourceSFX.PlayOneShot(Snort, 1.5f);
+        AudioManager.Instance.SourceSFX.PlayOneShot(Snort, 1f);
         FollowTarget = GameObject.Find("Player");
     }
 

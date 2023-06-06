@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
 
     private bool isRandom = false;
     private bool isBossRandom = false;
+    private bool isBossWave = false;
     
 
     
@@ -120,10 +121,24 @@ public class WaveManager : MonoBehaviour
     IEnumerator start()
     {
         yield return new WaitForSeconds(1f);
+        if (isBossWave)
+        {
+            isBossWave = false;
+            UpgradeManager.Instance.ShowUpgradePanel();
+            while (UpgradeManager.Instance.isChoosing)
+            {
+                // wait for player to choose the thing
+                yield return null;
+            }
+
+        }
         if(waveNumber % 5 != 0)
             Manager.Instance.WaveTextMesh.text = "Current Wave\n" + (waveNumber);
         else
+        {
             Manager.Instance.WaveTextMesh.text = "Current Wave\n" + (waveNumber) + "\n<color=red>BOSS Wave</color>";
+            isBossWave = true;
+        }
         Manager.Instance.WavePanel.SetActive(true);
         yield return new WaitForSeconds(1f);
         currentWave.SetActive(true);
