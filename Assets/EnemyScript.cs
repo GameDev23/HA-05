@@ -73,6 +73,7 @@ public class EnemyScript : MonoBehaviour
                     return;
                 Debug.Log("Other: " + other.gameObject.tag + "  " + other.gameObject.name + " this: " + gameObject.tag+ "  " + gameObject.name);
                 GameObject reflectedProjectile = Instantiate(projectile);
+                AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.Reflector, 3f);
                 reflectedProjectile.transform.position = other.transform.position;
                 return;
             }

@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip Zap;
     public AudioClip explosion;
     public AudioClip Applause;
+    public AudioClip Reflector;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION

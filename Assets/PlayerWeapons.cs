@@ -56,8 +56,11 @@ public class PlayerWeapons : MonoBehaviour
 
                 beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
                 beam3.transform.localScale += new Vector3(1, 1, 1);
+                Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
+                
+            }
 
-            Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
+            
 
         }
 
