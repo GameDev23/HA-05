@@ -7392,7 +7392,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373306195
 GameObject:
@@ -8162,6 +8162,7 @@ MonoBehaviour:
   - {fileID: 5227546936323206343, guid: a0f34df8916fa4e4ba7296aac83113e3, type: 3}
   - {fileID: 897983747778123226, guid: 15ac734a6b580654abbe2c55e5bca039, type: 3}
   - {fileID: 1709793569572428254, guid: 5b16dbcd7682941e393534ab660bbc86, type: 3}
+  - {fileID: 6530472958921627452, guid: 8fd45e36212b29641abc020273620243, type: 3}
   bossWaveList:
   - {fileID: 1105579221766554677, guid: 277e7bfadd3703343857b9805e98f020, type: 3}
   - {fileID: 497691358766016421, guid: 9d3a2f03249dc984383c06faf5760ceb, type: 3}
@@ -8184,7 +8185,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1735111485 stripped
 RectTransform:
