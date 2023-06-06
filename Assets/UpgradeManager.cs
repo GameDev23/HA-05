@@ -18,6 +18,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private GameObject Slot2;
     [SerializeField] private GameObject Slot3;
     [SerializeField] private GameObject Confetti;
+    [SerializeField] private Rigidbody2D Player;
     
     
     // Start is called before the first frame update
@@ -48,6 +49,9 @@ public class UpgradeManager : MonoBehaviour
     {
         // shows the upgrade panel
         isChoosing = true;
+        // make the player invicible during upgrade selection
+        Player.simulated = false;
+        AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.Applause, 2f);
         UpgradePanel.SetActive(true);
     }
 
@@ -55,6 +59,9 @@ public class UpgradeManager : MonoBehaviour
     {
         // hides the currently shown panel
         isChoosing = false;
+        
+        // make the player no longer invicible 
+        Player.simulated = true;
         UpgradePanel.SetActive(false);
     }
 
@@ -62,7 +69,7 @@ public class UpgradeManager : MonoBehaviour
     {
         Debug.Log("Slot 1");
         
-        PrimaryFireMultiplier *= 1.15f;
+        PrimaryFireMultiplier *= 1.25f;
 
         HideUpgradePanel();
     } 
@@ -70,7 +77,7 @@ public class UpgradeManager : MonoBehaviour
     public void OnSlotTwo()
     {
         Debug.Log("Slot 2");
-        CooldownMultiplier += 0.8f;
+        CooldownMultiplier *= 0.8f;
         Manager.Instance.ModifyCooldowns(CooldownMultiplier);
         HideUpgradePanel();
     } 

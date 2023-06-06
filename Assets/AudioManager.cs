@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> SamwelDialog;
     public AudioClip Zap;
     public AudioClip explosion;
+    public AudioClip Applause;
 
     //DECLARE GLOBAL AUDIO VARIABLES HERE
     #region VARIABLE DECLARATION
