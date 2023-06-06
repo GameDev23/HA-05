@@ -57,34 +57,46 @@ public class PlayerWeapons : MonoBehaviour
                 beam3.transform.position = pos + 1f * Vector3.right + 0.5f * Vector3.down;
                 beam3.transform.localScale += new Vector3(1, 1, 1);
 
-                Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
+            Manager.Instance.cooldownSecondary = Manager.Instance.CooldownSecondary;
 
-            }
-
-            if (Input.GetButton("Fire3") && Manager.Instance.cooldownDavid <= 0)
-            {
-                GameObject circle = Instantiate(SnortCircle);
-                circle.transform.position = transform.position;
-                Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
-            }
-
-            if (Input.GetButton("Fire4") && Manager.Instance.cooldownDavid <= 0)
-            {
-                GameObject lightning = Instantiate(Lightning);
-            }
-
-            //Adjust cooldowns
-            float cdSecondary = Manager.toPercent(Manager.Instance.cooldownSecondary, Manager.Instance.CooldownSecondary);
-            Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
-            float cdDavid = Manager.toPercent(Manager.Instance.cooldownDavid, Manager.Instance.CooldownDavid);
-            Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
-        
-            Manager.Instance.cooldownPrimary -= Time.deltaTime;
-            Manager.Instance.cooldownSecondary -= Time.deltaTime;
-            Manager.Instance.cooldownDavid -= Time.deltaTime;
         }
-        
 
+        if (Input.GetButton("Fire3") && Manager.Instance.cooldownDavid <= 0)
+        {
+            GameObject circle = Instantiate(SnortCircle);
+            circle.transform.position = transform.position;
+            Manager.Instance.cooldownDavid = Manager.Instance.CooldownDavid;
+        }
+
+        if (Input.GetButton("Fire4") && Manager.Instance.cooldownSamwel <= 0)
+        {
+            //GameObject lightning = Instantiate(Lightning);
+            StartCoroutine(shockSamwel());
+            Manager.Instance.cooldownSamwel = Manager.Instance.CooldownSamwel;
+        }
+
+        //Adjust cooldowns
+        float cdSecondary = Manager.toPercent(Manager.Instance.cooldownSecondary, Manager.Instance.CooldownSecondary);
+        Manager.Instance.TripleShotCooldown.fillAmount = cdSecondary;
+        float cdDavid = Manager.toPercent(Manager.Instance.cooldownDavid, Manager.Instance.CooldownDavid);
+        Manager.Instance.SnortCircleCooldown.fillAmount = cdDavid;
+        
+        Manager.Instance.cooldownPrimary -= Time.deltaTime;
+        Manager.Instance.cooldownSecondary -= Time.deltaTime;
+        Manager.Instance.cooldownDavid -= Time.deltaTime;
+        Manager.Instance.cooldownSamwel -= Time.deltaTime;
+
+
+    }
+
+    IEnumerator shockSamwel()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject lightning = Instantiate(Lightning);
+            yield return new WaitForSeconds(1f);
+        }
+        yield return null;
     }
 
 
