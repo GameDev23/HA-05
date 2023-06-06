@@ -34,14 +34,9 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Comma))
         {
             ShowUpgradePanel();
-        }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            HideUpgradePanel();
         }
     }
 
@@ -85,7 +80,12 @@ public class UpgradeManager : MonoBehaviour
     public void OnSlotThree()
     {
         Debug.Log("Slot 3");
-        ProjectileSize += 0.2f;
+        if(ProjectileSize <= 3)
+            ProjectileSize += 0.2f;
+        else
+        {
+            Slot3.SetActive(false);
+        }
         HideUpgradePanel();
     }
 }
