@@ -6766,6 +6766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerScore: 0
+  MainCamera: {fileID: 519420031}
   TripleShotCooldown: {fileID: 1611347006}
   SnortCircleCooldown: {fileID: 243443979}
   LighningCoolDown: {fileID: 339526193}

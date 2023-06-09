@@ -9,7 +9,7 @@ public class RandomMovement : MonoBehaviour
     private float ElapsedTime = 0f;
     private float ChangeMovement = 0f;
     [SerializeField] Rigidbody2D Rigidbody;
-    [SerializeField] Camera Cam;
+    private Camera Cam;
     [SerializeField] bool isBoss;
     private bool OutOfX = false;
     private bool OutOfLowerY = false;
@@ -20,16 +20,15 @@ public class RandomMovement : MonoBehaviour
 
     private void Start()
     {
-        if (Cam == null)
-        {
-            Cam = GetComponent<Camera>();
-        }
+
+        Cam = Manager.Instance.MainCamera;
+        
 
         // Generate initial random direction
         GenerateRandomDirection();
         Middle = Cam.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
-        LowerY = Cam.ViewportToWorldPoint(new Vector2(0.5f, 0.2f));
-        UpperY = Cam.ViewportToWorldPoint(new Vector2(0.5f, 0.8f));
+        LowerY = Cam.ViewportToWorldPoint(new Vector2(0f, 0.2f));
+        UpperY = Cam.ViewportToWorldPoint(new Vector2(0f, 0.8f));
     }
 
     private void Update()
@@ -93,7 +92,7 @@ public class RandomMovement : MonoBehaviour
         if (OutOfLowerY) 
         {
             // Generate a random direction vector
-            randomDirection = new Vector2(Random.Range(1f, 2f), Random.Range(1f, 2f));
+            randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 2f));
             randomDirection.Normalize();
             randomDirection *= 10f; // Adjusting the magnitude of the random direction
             OutOfLowerY = false;
@@ -103,7 +102,7 @@ public class RandomMovement : MonoBehaviour
         if (OutOfUpperY) 
         {
             // Generate a random direction vector
-            randomDirection = new Vector2(Random.Range(1f, -2f), Random.Range(1f, -2f));
+            randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(0f, -2f));
             randomDirection.Normalize();
             randomDirection *= 10f; // Adjusting the magnitude of the random direction
             OutOfUpperY = false;
