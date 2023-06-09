@@ -150,7 +150,7 @@ MonoBehaviour:
   Parent: {fileID: 2570172656894175523}
   Children: {fileID: 2570172656894175523, guid: 12adab8aad2fb18478029b7046ca361b, type: 3}
   TimeToSplit: 3
-  xSpeed: 10
+  xSpeed: 20
   ySpeed: 0
   ShootSound: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
   HitSound: {fileID: 8300000, guid: 914262ccd04b4764cb20c68315dbbf60, type: 3}
