@@ -49,22 +49,34 @@ public class SamwelBeam : MonoBehaviour
             Rigidbody2D rb4 = child4.GetComponent<Rigidbody2D>();
             GameObject child5 = Instantiate(Children);
             Rigidbody2D rb5 = child5.GetComponent<Rigidbody2D>();
+            //GameObject child6 = Instantiate(Children);
+            //Rigidbody2D rb6 = child6.GetComponent<Rigidbody2D>();
+            //GameObject child7 = Instantiate(Children);
+            //Rigidbody2D rb7 = child7.GetComponent<Rigidbody2D>();
 
-            child1.transform.position = transform.position + (Vector3.up * 0.5f);
+
+            child1.transform.position = transform.position + (Vector3.up * 0.6f);
             child1.transform.Rotate(Vector3.back, 45f);
-            child2.transform.position = transform.position + (Vector3.up * 0.25f);
-            child2.transform.Rotate(Vector3.back, 22.5f);
-            child3.transform.position = transform.position + (Vector3.left * 0.5f);
-            child4.transform.position = transform.position + (Vector3.down * 0.25f);
-            child4.transform.Rotate(Vector3.back, -22.5f);
-            child5.transform.position = transform.position + (Vector3.down * 0.5f);
+            child2.transform.position = transform.position + (Vector3.up * 0.4f) + (Vector3.left * 0.4f);
+            child2.transform.Rotate(Vector3.back, 30f);
+            child3.transform.position = transform.position + (Vector3.left * 0.6f);
+            child4.transform.position = transform.position + (Vector3.down * 0.4f) + (Vector3.left * 0.4f);
+            child4.transform.Rotate(Vector3.back, -30f);
+            child5.transform.position = transform.position + (Vector3.down * 0.6f);
             child5.transform.Rotate(Vector3.back, -45f);
+            //child6.transform.position = transform.position + (Vector3.up * 0.2f) + (Vector3.left * 0.2f);
+            //child6.transform.Rotate(Vector3.back, 15f);
+            //child7.transform.position = transform.position + (Vector3.down * 0.2f) + (Vector3.left * 0.2f);
+            //child7.transform.Rotate(Vector3.back, -15f);
+
 
             rb1.velocity = (Vector3.left + Vector3.up).normalized * speedUpFactor;
             rb2.velocity = (Vector3.left + ((Vector3.up) * 0.5f)).normalized * speedUpFactor;
             rb3.velocity = (Vector3.left) * speedUpFactor;
             rb4.velocity = (Vector3.left + ((Vector3.down) * 0.5f)).normalized * speedUpFactor;
             rb5.velocity = (Vector3.left + Vector3.down).normalized * speedUpFactor;
+            //rb6.velocity = (Vector3.left + ((Vector3.up) * 0.5f)).normalized * speedUpFactor;
+            //rb7.velocity = (Vector3.left + ((Vector3.down) * 0.5f)).normalized * speedUpFactor;
 
 
 
