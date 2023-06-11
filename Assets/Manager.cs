@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
     public Image TripleShotCooldown;
     public Image SnortCircleCooldown;
     public Image LighningCoolDown;
+    public Image BarrelRollCooldown;
     public GameObject Player;
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
@@ -51,11 +52,13 @@ public class Manager : MonoBehaviour
     public float CooldownSecondary = 5f;
     public float CooldownDavid = 8f;
     public float CooldownSamwel = 8f;
+    public float CooldownBarrelRoll = 8f;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
     public float cooldownDavid = 0f;
     public float cooldownSamwel = 0f;
+    public float cooldownBarrelRoll = 0f;
 
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
@@ -129,6 +132,8 @@ public class Manager : MonoBehaviour
         
 
         AudioManager.Instance.SourceBGM.Play();
+        
+
     }
 
     // Update is called once per frame
@@ -142,8 +147,13 @@ public class Manager : MonoBehaviour
         SnortCircleCooldown.fillAmount = cdDavid;
         float cdSamwel = toPercent(cooldownSamwel, CooldownSamwel);
         LighningCoolDown.fillAmount = cdSamwel;
+        float cdBarrel = toPercent(cooldownBarrelRoll, CooldownBarrelRoll);
+        BarrelRollCooldown.fillAmount = cdBarrel;
         if(ShouldShowDialog && !showingDialog)
             startDialog();
+        
+        //Only for the barrelroll cd
+        cooldownBarrelRoll -= Time.deltaTime;
     }
 
     public static float toPercent(float a, float b)
