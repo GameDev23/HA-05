@@ -38,6 +38,7 @@ public class BossShooting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.name);
         if (other.gameObject.CompareTag("GameBorder"))
         {
             Destroy(gameObject);
