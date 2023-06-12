@@ -46,7 +46,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8141917071182380047, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: Health
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8141917071182380051, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: m_RootOrder
@@ -112,7 +112,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8141917071182380047, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: Health
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8141917071182380051, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: m_RootOrder
@@ -178,7 +178,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8141917071182380047, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: Health
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8141917071182380051, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: m_RootOrder
@@ -244,7 +244,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8141917071182380047, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: Health
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8141917071182380051, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: m_RootOrder
@@ -308,6 +308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1291639487541752532}
     m_Modifications:
+    - target: {fileID: 8141917071182380047, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
+      propertyPath: Health
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8141917071182380051, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -372,7 +376,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8141917071182380047, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: Health
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8141917071182380051, guid: 17b537143e8ca45bfa3214274d0eeb16, type: 3}
       propertyPath: m_RootOrder

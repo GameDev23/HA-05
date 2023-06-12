@@ -753,10 +753,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19f40a3ff50a876428b56dada9151c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoint: 12
+  HealthPoint: 25
   Projectile: {fileID: 2570172656894175523, guid: 26b3e0c9c6e8e22479b6b1aa168da2d1, type: 3}
-  DestroyAnimation: {fileID: 6469208720404049894, guid: 9331002f423db448486448127d62f363, type: 3}
-  DestroyParticle: {fileID: 0}
+  DestroyAnimation: {fileID: 7213266820190785420, guid: d8639c65c8d2f42ed95fbc6c904b3ba2, type: 3}
+  DestroyParticle: {fileID: 6202609200145119709, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
   DestroyAnimationScaling: 0
   MinDelay: 2
   MaxDelay: 4
