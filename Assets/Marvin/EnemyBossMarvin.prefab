@@ -685,6 +685,7 @@ GameObject:
   - component: {fileID: -8387437968559318242}
   - component: {fileID: 8763834518134118143}
   - component: {fileID: 5272532890242033839}
+  - component: {fileID: -4055348931952066447}
   m_Layer: 6
   m_Name: EnemyBossMarvin
   m_TagString: Enemy
@@ -840,17 +841,40 @@ MonoBehaviour:
   Horizontal: 0
   Sinus: 0
   Cosinus: 0
-  SpeedVertical: 60
+  SpeedVertical: 20
   SpeedHorizontal: 0
   SpeedSinus: 0
   SpeedCosinus: 0
-  timeVertical: 4
+  timeVertical: 5
   timeHorizontal: 0
   timeSinus: 0
   timeCosinus: 0
-  DebugTest: 0
+  DebugTest: 1
   radius: 1
   speed: 2
+--- !u!114 &-4055348931952066447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513924423845830248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a205fd669155a47a53536289bdb536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  projectile: {fileID: 6418951653882640895, guid: c96e0257ccfbd3b4196cff971a20fc94, type: 3}
+  DestroyAnimation: {fileID: 6469208720404049894, guid: 03edc74619dd6e54e8ebce847ae66a44, type: 3}
+  DestroyParticle: {fileID: 6202609200145119709, guid: 6f44d0a5a45a62e458d88adf9a207855, type: 3}
+  DestroyAnimationScaling: 1
+  nextProjectileDelay: 2
+  minDelay: 0.5
+  maxDelay: 5
+  minLaser: 5
+  maxLaser: 20
+  laserDelay: 0.1
 --- !u!1 &4083755455823168275
 GameObject:
   m_ObjectHideFlags: 0
