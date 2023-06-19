@@ -6721,6 +6721,7 @@ MonoBehaviour:
   GodModeText: {fileID: 266872318}
   BGMMenu: {fileID: 8300000, guid: 15257b4163139cc44b70213367f6b887, type: 3}
   BGMGame: {fileID: 8300000, guid: f6b129d32223b234fb78abf29f56c8e9, type: 3}
+  MarvinCamera: {fileID: 519420031}
   DialogTextMesh: {fileID: 649075789}
   DialogPanel: {fileID: 2057965132}
   DialogPanelImage: {fileID: 2057965134}
@@ -8751,6 +8752,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5638306657401599874, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
+      propertyPath: chicken
+      value: 
+      objectReference: {fileID: 5771929671798034547, guid: c61c3252e2a9d4b47b643f1246dc0ed2, type: 3}
     - target: {fileID: 5638306657401599874, guid: edb39ec7a28107f4e9dd38527c4e35a9, type: 3}
       propertyPath: Lighning
       value: 

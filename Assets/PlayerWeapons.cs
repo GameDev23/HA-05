@@ -17,6 +17,9 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] public float CoolddownSamwel = 8f;
     
     public float cooldownSamwel= 0f;
+
+    // Marvin
+    [SerializeField] private GameObject chicken;
     
     // Start is called before the first frame update
     void Start()
@@ -77,6 +80,10 @@ public class PlayerWeapons : MonoBehaviour
             StartCoroutine(shockSamwel());
             Manager.Instance.cooldownSamwel = Manager.Instance.CooldownSamwel;
         }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            StartCoroutine(SahneCheatcode());
+        }
 
         //Adjust cooldowns
         float cdSecondary = Manager.toPercent(Manager.Instance.cooldownSecondary, Manager.Instance.CooldownSecondary);
@@ -100,6 +107,25 @@ public class PlayerWeapons : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         yield return null;
+    }
+
+
+    IEnumerator SahneCheatcode()
+    {
+
+        for (int i = 0; i < 200; i++)
+        {
+            float x = UnityEngine.Random.Range(0.5f, 1.0f);
+            float y = UnityEngine.Random.Range(0.8f, 1.0f);
+            Vector2 pos = Manager.Instance.MarvinCamera.ViewportToWorldPoint(new Vector2(x, y));
+            GameObject chickenInstance = Instantiate(chicken.gameObject, pos, Quaternion.identity);
+            chickenInstance.transform.position = pos;
+            //chickenInstance.transform.rotation = UnityEngine.Random.rotation;
+
+            yield return new WaitForSeconds(0.02f);
+        }
+
+
     }
 
 
