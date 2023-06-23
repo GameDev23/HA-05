@@ -30,6 +30,7 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI GodModeText;
     public AudioClip BGMMenu;
     public AudioClip BGMGame;
+    public Camera MarvinCamera;
     
     public TextMeshProUGUI DialogTextMesh;
     public GameObject DialogPanel;
