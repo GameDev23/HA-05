@@ -29,6 +29,7 @@ public class SamwelBoss : MonoBehaviour
             Debug.Log("WTEST BOSS DRSTRO");
             GameObject explosion = Instantiate(DestroyAnimation);
             explosion.transform.localScale += Vector3.one * DestroyAnimationScaling;
+            AudioManager.Instance.SourceSFX.PlayOneShot(AudioManager.Instance.SamwelExplosion, 1f);
             explosion.transform.position = transform.position;
             Destroy(gameObject);
         }

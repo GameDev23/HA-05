@@ -16,6 +16,7 @@ public class Manager : MonoBehaviour
 {
     public static Manager Instance;
     public int PlayerScore = 0;
+    public Camera MainCamera;
     public Image TripleShotCooldown;
     public Image SnortCircleCooldown;
     public Image LighningCoolDown;
