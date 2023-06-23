@@ -80,9 +80,10 @@ public class PlayerWeapons : MonoBehaviour
             StartCoroutine(shockSamwel());
             Manager.Instance.cooldownSamwel = Manager.Instance.CooldownSamwel;
         }
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetButton("Fire5") && Manager.Instance.cooldownMarvin <= 0)
         {
             StartCoroutine(SahneCheatcode());
+            Manager.Instance.cooldownMarvin = Manager.Instance.CooldownMarvin;
         }
 
         //Adjust cooldowns
@@ -95,6 +96,8 @@ public class PlayerWeapons : MonoBehaviour
         Manager.Instance.cooldownSecondary -= Time.deltaTime;
         Manager.Instance.cooldownDavid -= Time.deltaTime;
         Manager.Instance.cooldownSamwel -= Time.deltaTime;
+        Manager.Instance.cooldownMarvin -= Time.deltaTime;
+        
 
 
     }

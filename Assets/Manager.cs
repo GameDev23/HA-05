@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
     public Image SnortCircleCooldown;
     public Image LighningCoolDown;
     public Image BarrelRollCooldown;
+    public Image ChickenCooldown;
     public GameObject Player;
     public GameObject WavePanel;
     public TextMeshProUGUI WaveTextMesh;
@@ -55,12 +56,14 @@ public class Manager : MonoBehaviour
     public float CooldownDavid = 8f;
     public float CooldownSamwel = 8f;
     public float CooldownBarrelRoll = 8f;
+    public float CooldownMarvin = 10f;
 
     public float cooldownPrimary = 0f;
     public float cooldownSecondary = 0f;
     public float cooldownDavid = 0f;
     public float cooldownSamwel = 0f;
     public float cooldownBarrelRoll = 0f;
+    public float cooldownMarvin = 0f;
 
     public bool ShouldShowDialog = false;
     public bool isGodmode = false;
@@ -151,6 +154,8 @@ public class Manager : MonoBehaviour
         LighningCoolDown.fillAmount = cdSamwel;
         float cdBarrel = toPercent(cooldownBarrelRoll, CooldownBarrelRoll);
         BarrelRollCooldown.fillAmount = cdBarrel;
+        float cdChicken = toPercent(cooldownMarvin, CooldownMarvin);
+        ChickenCooldown.fillAmount = cdChicken;
         if(ShouldShowDialog && !showingDialog)
             startDialog();
         

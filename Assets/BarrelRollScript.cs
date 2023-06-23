@@ -37,7 +37,7 @@ public class BarrelRollScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if(!isRolling && (Manager.Instance.cooldownBarrelRoll <= 0))
             {
